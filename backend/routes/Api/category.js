@@ -12,12 +12,12 @@ const __dirname = path.dirname(__filename);
 
   const filePath = path.join(__dirname, '../../data.json'); // Adjust relative to this file's location
 
-  // ✅ Multer setup
-  const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, path.join(__dirname, '../../uploads')),
-    filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
-  });
-  const upload = multer({ storage });
+// ✅ Multer setup
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, path.join(__dirname, '../../uploads')),
+  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
+});
+const upload = multer({ storage });
   
 // ✅ API to get all categories from data.json
 app.get('/api/categories', (req, res) => {
