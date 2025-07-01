@@ -6,7 +6,8 @@ import axios from 'axios';
 
 const MyContextProvider = ({children}) => {
 
-  const apiUrl = 'http://localhost:3034' ;
+  const apiUrl = 'http://localhost:3034';
+  // const apiUrl = 'https://foreveryou5-3.onrender.com'
        //for api calling start
 
  const[apiloader,setApiloader]=useState(true)
@@ -14,6 +15,7 @@ const[api,setApi] = useState([])
 
 useEffect(() => {
   const fetchData = async () => {
+    setApiloader(true);
     try {
       const response = await axios.get(`${apiUrl}/api/data`);
       setApi(response.data.data)

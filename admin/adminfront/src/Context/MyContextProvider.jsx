@@ -8,6 +8,9 @@ const MyContextProvider = ({children}) => {
 
      const apiUrl = 'http://localhost:3034' ;
 
+  // const apiUrl = 'https://foreveryou5-3.onrender.com'
+
+
      //for home start
 
      const [activeTab, setActiveTab] = useState("addProduct");

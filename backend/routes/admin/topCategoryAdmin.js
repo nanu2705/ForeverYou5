@@ -27,7 +27,7 @@ app.post('/api/top-categories', upload.single('image'), (req, res) => {
   }
 
   const categoryRef = title.toLowerCase().replace(/\s+/g, '-');
-  const imagePath = `/uploads/${req.file.filename}`;
+  const imagePath = `uploads/${req.file.filename}`;
   const parsedCategories = JSON.parse(categories);
 
   fs.readFile(categoryJsonPath, 'utf8', (err, data) => {
