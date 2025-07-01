@@ -1,0 +1,42 @@
+@import '../Common/Mixin.scss';
+
+.pay_one {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .select {
+    margin-top: 20px;
+
+    .first {
+      margin-bottom: 15px;
+
+      label {
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .upi {
+        margin-top: 10px;
+
+        button {
+          padding: 10px 20px;
+          background-color: #0f75bc;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        button:disabled {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+

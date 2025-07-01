@@ -1,0 +1,35 @@
+.alert {
+    background-color: rgba(0, 128, 0, 0.918);
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+    position: fixed;
+    z-index: 999999;
+    left: 50%;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transform: translate(-50%, -10%) scale(1);
+    animation: alert-open 0.3s forwards;
+
+   
+
+}
+
+
+
+
+@keyframes alert-open {
+    0% {
+        transform: translate(-50%, -10%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -10%) scale(1);
+    }
+}

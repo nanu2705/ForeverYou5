@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1751275223137,
+    "title": "Women",
+    "categories": [
+      "Bridal Lehenga",
+      "Bridal Blouse",
+      "Bridal Bangles"
+    ],
+    "img": "/uploads/1751275223126-lehengha4.jpg",
+    "categoryRef": "women"
+  },
+  {
+    "id": 1751275241253,
+    "title": "Men",
+    "categories": [
+      "Groom Kurta"
+    ],
+    "img": "/uploads/1751275241243-kurta3.jpg",
+    "categoryRef": "men"
+  }
+]

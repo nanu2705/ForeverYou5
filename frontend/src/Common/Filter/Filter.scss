@@ -1,0 +1,103 @@
+
+.main_filter{
+        display: flex;
+        flex-direction: column;
+     
+
+    .filter_head{
+    display: flex;
+    justify-content:space-around;
+    width: 200px;
+    padding: 10px auto;
+        
+    }
+
+    .filter_box{
+     
+        border: 1px solid black;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+
+        .filter-head{
+       display: flex;
+     justify-content: space-between;
+
+        .select-filter{
+            width: fit-content;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        
+        button{
+            width: fit-content;
+            padding: 7px;
+            border-radius: 5px;
+            border: none;
+            background-color: #F4ACBD;
+            cursor: pointer;
+            &:hover{
+                color: white;
+                background-color: rgba(128, 128, 128, 0.521);
+            }
+        }
+    }
+       .price-range{
+            border-bottom: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            span{
+                display: flex;
+                padding: 6px;
+            }
+           
+        }
+
+        .filter-size{
+            border-bottom: 1px solid black; 
+            display: flex;
+            flex-direction: column;
+            span{
+                display: flex;
+                padding: 6px;
+            }
+        }
+
+       .filter-rating{
+        border-bottom: 1px solid black; 
+        display: flex;
+        flex-direction: column;
+       
+        span{
+            display: flex;
+            padding: 6px;
+        }
+       }
+
+       .filter-lifestyle{
+        border-bottom: 1px solid black; 
+        display: flex;
+        flex-direction: column;
+        span{
+            display: flex;
+            padding: 6px;
+        }
+       }
+
+       .filter-deliveryday{
+        
+        display: flex;
+        flex-direction: column;
+        span{
+            display: flex;
+            padding: 6px;
+        }
+       }
+    }
+}

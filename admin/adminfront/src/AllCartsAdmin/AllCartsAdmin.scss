@@ -1,0 +1,67 @@
+.admin-cart-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .user-cart {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: #f9f9f9;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .cart-item {
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: white;
+        border-radius: 8px;
+
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+
+        .details {
+          flex-grow: 1;
+
+          p {
+            margin: 3px 0;
+          }
+
+          .delete-btn {
+            margin-top: 5px;
+            background-color: #ff4d4f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+          }
+
+          .delete-btn:hover {
+            background-color: #e60000;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.shipping-policy {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.7;
+
+
+  h1 {
+    font-size: 2rem;
+    color: #000;
+   text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #444;
+    border-bottom: 1px solid #ccc;
+
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+ a {
+    color: #d46a92; // your pink logo color
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

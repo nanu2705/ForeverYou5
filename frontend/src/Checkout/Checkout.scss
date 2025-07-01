@@ -1,0 +1,138 @@
+@import '../Common/Mixin.scss';
+
+.ship-main {
+  margin: 40px auto;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #7C3750DE;
+  outline: 1px solid #7C3750DE;
+  outline-offset: 10px;
+  border-radius: 10px;
+  background-color: #F4ACBD;
+
+  @include sx {
+    margin: 20px 10px;
+  }
+
+  h2 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Arial', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .name-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .name-input {
+      margin-bottom: 20px;
+      width: 100%;
+
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+
+        &:focus {
+          border-color: #3498db;
+          outline: none;
+          box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+      }
+
+      .error-message {
+        margin-top: 5px;
+        color: #000000;
+        font-size: 0.875rem;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #bb3756c1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: darken(#bb3756c1, 10%);
+      }
+    }
+  }
+}
+
+.shipping-details {
+  margin: 40px auto;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #7C3750DE;
+  outline: 1px solid #7C3750DE;
+  outline-offset: 10px;
+  border-radius: 10px;
+  background-color: #F4ACBD;
+
+  @include sx {
+    margin: 20px 10px;
+  }
+
+  h2 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Arial', sans-serif;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+    font-weight: 600;
+  
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #bb3756c1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+  
+
+    &:hover {
+      background-color: darken(#bb3756c1, 10%);
+    }
+  }
+
+  .pay{
+    background-color: white;
+    color: #000000;
+    margin-top: 10px;
+    transition: all 0.3s ease-in;
+  }
+}

@@ -1,0 +1,59 @@
+@import '../Common/Mixin.scss';
+
+.confirmation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 72px);
+    background-color: #f0f8f5;
+    font-family: Arial, sans-serif;
+  
+  
+  .confirmation-box {
+    background-color: #ffffff;
+    border: 1px solid #d4d4d4;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px 30px;
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    @include md{
+      height: 200px;
+      width: 200px;
+    }
+  
+  
+  .confirmation-icon {
+    font-size: 100px;
+    color: #4caf50;
+    margin-bottom: 10px;
+    animation: namep 1.8s ease-in infinite;
+  }
+
+  .order-btn{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .confirmation-message {
+    font-size: 20px;
+    color: #333333;
+  }
+
+}
+
+}
+
+@keyframes namep {
+  0%{transform: scale(1);}
+  100%{transform: scale(1.2);}
+}
+  

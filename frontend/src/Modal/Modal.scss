@@ -1,0 +1,57 @@
+@import '../Common/Mixin.scss';
+
+.overlayp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modalo {
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 500px;
+  height: fit-content;
+  background-color: white;
+  padding: 10px;
+  animation: name 0.4s ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.422), 0 0 5px rgba(0, 0, 0, 0.34);
+  z-index: 1001;
+
+  @include md {
+    width: 90%;
+  }
+}
+
+.close {
+  font-size: 54px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  color: rgba(0, 0, 0, 0.701);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    color: rgba(0, 0, 0, 0.358);
+  }
+}
+
+@keyframes name {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

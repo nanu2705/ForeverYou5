@@ -1,0 +1,81 @@
+.admin-contact-list {
+  padding: 2rem;
+  background: #f7f8fa;
+  font-family: "Segoe UI", sans-serif;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .contact-details {
+      margin-bottom: 1rem;
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      p {
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .message {
+        font-style: italic;
+        color: #444;
+      }
+    }
+
+    .delete-btn {
+      align-self: flex-end;
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+  }
+}
+
+// Responsive tweaks
+@media (max-width: 480px) {
+  .admin-contact-list {
+    padding: 1rem;
+
+    .contact-card {
+      padding: 1rem;
+    }
+
+    .delete-btn {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+    }
+  }
+}

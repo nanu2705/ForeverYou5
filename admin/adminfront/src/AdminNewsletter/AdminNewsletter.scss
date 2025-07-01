@@ -1,0 +1,71 @@
+.admin-newsletter {
+  padding: 2rem;
+  background: #f9fafb;
+  font-family: "Segoe UI", sans-serif;
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+
+  .newsletter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .newsletter-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: #333;
+      word-break: break-all;
+    }
+
+    .delete-btn {
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+}
+
+// Responsive tweaks
+@media (max-width: 480px) {
+  .admin-newsletter {
+    padding: 1rem;
+
+    .newsletter-card {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .delete-btn {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

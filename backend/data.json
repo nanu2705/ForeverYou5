@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1750781016356,
+    "title": "women",
+    "category": "Bridal Lehenga",
+    "route_category": "Bridal-Lehenga",
+    "img": "/uploads/1750927450388-lehengha4.jpg",
+    "products": [
+      {
+        "id": 1750855874485,
+        "productimg": "/uploads/1750855874470-lehengha11.jpg",
+        "productbrand": "Royal Red Zardosi Bridal Lehenga",
+        "productname": "Adorn yourself in timeless royalty with this red zardosi lehenga, hand-embroidered with golden threads and paired with a rich dupatta.",
+        "route_productname": "Adorn-yourself-in-timeless-royalty-with-this-red-zardosi-lehenga,-hand-embroidered-with-golden-threads-and-paired-with-a-rich-dupatta.",
+        "productprice": 8000,
+        "productoldprice": 10000,
+        "review": 2.8,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "Step into your royal wedding moment with the Royal Red Zardosi Bridal Lehenga, a masterpiece crafted with precision and passion. This lehenga features rich red fabric adorned with intricate golden zardosi embroidery, symbolizing grace and grandeur. The paired dupatta is finished with a heavy border and delicate sequins, making it the perfect attire for brides who dream of a majestic, unforgettable look."
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1750855874471-lehengha2.jpg"
+          },
+          {
+            "in_image": "/uploads/1750855874477-lehengha9.jpg"
+          },
+          {
+            "in_image": "/uploads/1750855874479-lehengha3.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "S"
+          },
+          {
+            "size": "M"
+          },
+          {
+            "size": "L"
+          }
+        ]
+      },
+      {
+        "id": 1750856022062,
+        "productimg": "/uploads/1750856022043-lehengha1.jpg",
+        "productbrand": " Crimson Glow Embroidered Wedding Lehenga",
+        "productname": "This crimson masterpiece is embellished with detailed zari and resham work — designed to make every bride glow with confidence and charm.",
+        "route_productname": "This-crimson-masterpiece-is-embellished-with-detailed-zari-and-resham-work-—-designed-to-make-every-bride-glow-with-confidence-and-charm.",
+        "productprice": 8500,
+        "productoldprice": 12000,
+        "review": 3,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "Glow with bridal elegance in this stunning Crimson Glow Lehenga. Designed with traditional zari and resham embroidery, it radiates warmth, power, and sophistication. Each motif tells a story of love and celebration, while the complementary dupatta flows like a dream. Ideal for grand mandap moments, this lehenga ensures all eyes are on you."
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1750856022045-lehengha4.jpg"
+          },
+          {
+            "in_image": "/uploads/1750856022050-lehengha5.jpg"
+          },
+          {
+            "in_image": "/uploads/1750856022054-lehengha8.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "M"
+          },
+          {
+            "size": "L"
+          }
+        ]
+      },
+      {
+        "id": 1750927450390,
+        "productimg": "/uploads/1750927450372-lehengha9.jpg",
+        "productbrand": "Fiery Red Lehenga with Multi-layer Net Dupatta",
+        "productname": "A fiery red lehenga paired with a voluminous, layered net dupatta — light in feel, heavy in beauty.",
+        "route_productname": "A-fiery-red-lehenga-paired-with-a-voluminous,-layered-net-dupatta-—-light-in-feel,-heavy-in-beauty.",
+        "productprice": 9652,
+        "productoldprice": 12000,
+        "review": 4.8,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "Bring fire to your bridal look with this lightweight yet stunning red lehenga. The multi-layered dupatta adds volume and drama while the lehenga remains breathable and easy to carry — perfect for dancing, rituals, and picture-perfect memories."
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1750927450378-lehengha2.jpg"
+          },
+          {
+            "in_image": "/uploads/1750927450383-lehengha6.jpg"
+          },
+          {
+            "in_image": "/uploads/1750927450385-lehengha7.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "M"
+          },
+          {
+            "size": "L"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1750856514194,
+    "title": "Women",
+    "category": "Bridal Bangles",
+    "route_category": "Bridal-Bangles",
+    "img": "/uploads/1750856949171-jewel1.jpg",
+    "products": [
+      {
+        "id": 1750856949178,
+        "productimg": "/uploads/1750856949157-jewel2.jpg",
+        "productbrand": "Sindoor Elegance Kundan Bridal Bangles",
+        "productname": "Graceful kundan bangles in rich red — perfect for classic bridal moments and post-wedding celebrations",
+        "route_productname": "Graceful-kundan-bangles-in-rich-red-—-perfect-for-classic-bridal-moments-and-post-wedding-celebrations",
+        "productprice": 9800,
+        "productoldprice": 12000,
+        "review": 3,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "Adorn your wrists with timeless grace through these Sindoor Elegance bangles, crafted with delicate kundan stones set in rich red enamel. Perfect for bridal rituals and post-wedding celebrations, they radiate warmth, purity, and love."
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1750856949161-jewel3.jpg"
+          },
+          {
+            "in_image": "/uploads/1750856949163-jewel4.jpg"
+          },
+          {
+            "in_image": "/uploads/1750856949166-jewel5.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "2.2"
+          },
+          {
+            "size": "2.4"
+          },
+          {
+            "size": "2.6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1751269850144,
+    "title": "Women",
+    "category": "Bridal Blouse",
+    "route_category": "Bridal-Blouse",
+    "img": "/uploads/1751269850139-blouse2.jpg",
+    "products": [
+      {
+        "id": 1751269850144,
+        "productimg": "/uploads/1751269850131-blouse1.jpg",
+        "productbrand": "H&M",
+        "productname": "blouse",
+        "route_productname": "blouse",
+        "productprice": 4654,
+        "productoldprice": 6542,
+        "review": 3,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "jkdsncmdnvjkn,mzx"
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1751269850132-blouse1.jpg"
+          },
+          {
+            "in_image": "/uploads/1751269850132-blouse3.jpg"
+          },
+          {
+            "in_image": "/uploads/1751269850136-blouse4.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "M"
+          },
+          {
+            "size": "L"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1751272863960,
+    "title": "Men",
+    "category": "Groom Kurta",
+    "route_category": "Groom-Kurta",
+    "img": "/uploads/1751272863944-kurta2.jpg",
+    "products": [
+      {
+        "id": 1751272863958,
+        "productimg": "/uploads/1751272863922-kurta3.jpg",
+        "productbrand": "H&M",
+        "productname": "Groom Kurta",
+        "route_productname": "Groom-Kurta",
+        "productprice": 8754,
+        "productoldprice": 9526,
+        "review": 2.1,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "kjkldncklnlkMclk"
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1751272863924-kurta3.jpg"
+          },
+          {
+            "in_image": "/uploads/1751272863927-kurta2.jpg"
+          },
+          {
+            "in_image": "/uploads/1751272863930-kurta1.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "S"
+          },
+          {
+            "size": "M"
+          }
+        ]
+      }
+    ]
+  }
+]
