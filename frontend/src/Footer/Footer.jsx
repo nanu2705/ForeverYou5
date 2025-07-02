@@ -1,9 +1,7 @@
 import React, { useContext} from 'react';
 import './Footer.scss';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import TextField from '@mui/material/TextField';
@@ -49,9 +47,9 @@ const Footer = () => {
     <div className="footer-title">
       <div className="main-upper">
         <div className="first">
-          <h3>About For.everrnew</h3>
+          <h3>About ForeverYou</h3>
           <p>
-            Born from fresh perspectives and refined ambition, for.everrnew is a new voice in the world of fashion.
+            Born from fresh perspectives and refined ambition, ForeverYou is a new voice in the world of fashion.
             Designed for those who appreciate understated elegance and modern sophistication, our brand celebrates
             quality and originality. As we begin this journey, we thank you for embracing a new standard of style.
           </p>
@@ -106,9 +104,6 @@ const Footer = () => {
         <div className="social-icons">
           <a href="https://www.facebook.com/your_page" target="_blank" rel="noopener noreferrer">
             <FacebookIcon />
-          </a>
-          <a href="https://www.twitter.com/your_handle" target="_blank" rel="noopener noreferrer">
-            <TwitterIcon />
           </a>
           <a href="https://www.instagram.com/foreveryou.55" target="_blank" rel="noopener noreferrer">
             <InstagramIcon />

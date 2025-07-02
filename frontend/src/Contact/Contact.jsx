@@ -131,8 +131,8 @@ const Contact = () => {
           <div className="contact_item">
             <CiMail />
             <span>
-               <a href="mailto:for.everrnewcontact@gmail.com">
-               for.everrnewcontact@gmail.com
+               <a href="mailto:foreveryou5contact@gmail.com">
+               foreveryou5contact@gmail.com
                </a>
             </span>
           </div>
