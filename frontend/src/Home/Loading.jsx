@@ -10,16 +10,9 @@ const Loading = () => {
 <>
     {
 (loadingin||apiloader) &&
-    <div class="container-boxx">
-    <div class="box">
-        <div class="front-box"></div>
-        <div class="back-box"></div>
-        <div class="left-box"></div>
-        <div class="right-box"></div>
-        <div class="top-box"></div>
-        <div class="bottom-box"></div>
+    <div className="canva-loader">
+      <h1>Forever You...</h1>
     </div>
-</div>
 
     }
     </>

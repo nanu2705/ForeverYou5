@@ -1,0 +1,39 @@
+.admin-slider {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  input {
+    margin-right: 10px;
+  }
+
+  .slider-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+
+    .slide {
+      border: 1px solid #ccc;
+      padding: 10px;
+      position: relative;
+      img {
+        width: 100px;
+        height: auto;
+        object-fit: cover;
+      }
+
+      button {
+        background-color: crimson;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}

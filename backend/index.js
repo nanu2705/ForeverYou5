@@ -33,6 +33,7 @@ import registerroute from "./routes/registerroute.js";
 import cartroute from "./routes/cartroute.js";
 import wishlistroute from "./routes/wishlistroute.js";
 import shippingroute from "./routes/shippingroute.js";
+import sliderroute from "./routes/sliderroute.js";
 
 
 
@@ -45,7 +46,7 @@ const __dirname = path.dirname(__filename);
 // Multer setup
 
 const storage = multer.diskStorage({
-  
+  destination: (req, file, cb) => cb(null, path.join(__dirname, '../uploads')),
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
 });
 const upload = multer({ storage });
@@ -92,6 +93,7 @@ app.use('/', registerroute);
 app.use('/', cartroute);
 app.use('/', wishlistroute);
 app.use('/', shippingroute);
+app.use('/', sliderroute);
 
 
 

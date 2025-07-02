@@ -9,7 +9,7 @@ const AdminWishlist = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const adminToken = "YOUR_ADMIN_JWT_TOKEN";
+  // const adminToken = "YOUR_ADMIN_JWT_TOKEN";
 
   
 
@@ -18,7 +18,7 @@ const AdminWishlist = () => {
       setLoading(true);
       const res = await axios.get(`${apiUrl}/api/admin/wishlists`, {
         headers: {
-          Authorization: `Bearer ${adminToken}`,
+          Authorization: `Bearer`,
         },
       });
       setWishlists(res.data.data);
@@ -31,13 +31,13 @@ const AdminWishlist = () => {
 
   useEffect(() => {
     fetchWishlists();
-  },);
+  },[]);
 
   const handleRemoveWishItem = async (email, categoryid, productid) => {
     try {
       await axios.delete(`${apiUrl}/api/admin/wishlist/${email}/${categoryid}/${productid}`, {
         headers: {
-          Authorization: `Bearer ${adminToken}`,
+          Authorization: `Bearer `,
         },
       });
       alert("Item removed from wishlist");

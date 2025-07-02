@@ -6,9 +6,13 @@ import { InputAdornment, TextField } from '@mui/material';
 import { AccountCircle, EmailOutlined, Password, PhoneAndroid } from '@mui/icons-material';
 import MyContext from '../Context/MyContext';
 import axios from 'axios';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 
 const Register = () => {
   const { apiUrl,openregister, setOpenalert, setLoadingin, setMessage } = useContext(MyContext);
+const [showPassword, setShowPassword] = React.useState(false);
+const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
 
   const formik = useFormik({
     initialValues: {
@@ -109,7 +113,7 @@ const Register = () => {
               onChange={formik.handleChange}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
-              placeholder='email@domain.com'
+              placeholder='email@domain.com  e.g.(abc@gmail.com)'
               sx={{
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
@@ -152,7 +156,7 @@ const Register = () => {
               }}
             />
             <TextField
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               id="password"
               name="password"
               className='email'
@@ -175,6 +179,11 @@ const Register = () => {
                     <Password />
                   </InputAdornment>
                 ),
+                endAdornment: (
+      <InputAdornment position="end" style={{ cursor: "pointer" }} onClick={togglePasswordVisibility}>
+        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+      </InputAdornment>
+    )
               }}
             />
             <button type="submit">

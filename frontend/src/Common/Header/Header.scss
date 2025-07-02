@@ -1,7 +1,7 @@
 @import'../Mixin.scss';
 
 .head{
-    background-color:white;
+    background-image: url('../../Assets/Forever\ You\ \(2\).png');
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -159,44 +159,8 @@
          @include md{
           gap: 5px;
          }
-
-         .wishes{
-
-
-           @include mds{
-          display: none;
-         }
-         }
-
-         .scart{
-          position: relative;
-
-          @include mds{
-          display: none;
-         }
-
-          b{
-            position: absolute;
-           right: 2px;
-           font-size: 12px;
-            top: 3px;
-            background-color: #b03753;
-            border-radius: 100%;
-            color: white;
-            height: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 10px;
-            padding: 3px;
-          }
-         }
         
-        
-       
-
          .search-anim{
-
         position: relative;
 
         @include md{
@@ -205,6 +169,7 @@
 
         .search-bar{
           position: relative;
+
            
            .search-list{
             position: absolute;
@@ -247,13 +212,10 @@
         span{
           position: absolute;
           top: -4px;
-
           svg{
             font-size: 26px;
             color: #2c510b;
           }
-          
-
         }
 
          input{
@@ -269,43 +231,65 @@
             &:focus{
               border: 1px solid rgba(0, 0, 0, 0.468);
               outline: 0;
-            }
-           
-           
+            } 
          }
-
         }
         
+        .small-search{
+         
+
+          @include md{
+            display: none;
+          }
+        }
         span{
            color: black;
            gap: 50px;
            padding: 8px;
            cursor: pointer;
 
-           &:nth-child(1){
-            @include md{
-              display: none;
-            }
-           }
-           
-    
            &::placeholder{
-            font-family: Jacques Francois;
-            
-            
+            font-family: Jacques Francois; 
            }
 
-        
            svg{
             font-size: 30px;
             z-index: 999;
-            
-
             @include md{
                 font-size: 24px;
             }
            }
         }
+
+        .wishes{
+           @include md{
+          display: none;
+         }
+         }
+
+         .scart{
+          position: relative;
+
+          @include md{
+          display: none;
+         }
+
+          b{
+            position: absolute;
+           right: 2px;
+           font-size: 12px;
+            top: 3px;
+            background-color: #b03753;
+            border-radius: 100%;
+            color: white;
+            height: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10px;
+            padding: 3px;
+          }
+         }
 
         .nameo{
           display: flex;
@@ -345,7 +329,7 @@
           position: absolute;
           top: 70px;
           z-index: 999;
-        border-bottom: 5px solid #7C3750DE;
+          border-bottom: 5px solid #7C3750DE;
           right: 10px;
           background-color: white;
           width: fit-content;
@@ -355,8 +339,7 @@
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.297), 0 0 5px rgba(0, 0, 0, 0.311);
         
        
-          li {
-           
+          li {           
             list-style: none;
             border-radius: 20px;
             display: flex;
@@ -364,28 +347,28 @@
             align-items: center;
             font-family: sans-serif;
             cursor: pointer;
-          
             transition: all 0.3s ease-out;
-           
-        
+          
+            span{
+
+            svg{
+              
+
+              @include md{
+                font-size: 20px;
+              }
+            }
+            }
             &:hover {
               background-color: #7C3750DE;
-            
             }
-
-
             &:hover span{
               color: white;
             }
-
-
-      
         .text{
           font-weight: 500;
-
         }
-          
-          }
+        }
         }
     }
 
@@ -468,20 +451,12 @@ input{
 
 
 .react-responsive-modal-modal {
-  
- 
-  overflow: hidden;
-  
+   overflow: hidden; 
    background-color: white;
     display: inline-block;
     text-align: left;
     vertical-align: middle;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.25);
     position: relative;
- 
-
- 
-
-
   }
  

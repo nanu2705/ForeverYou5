@@ -37,7 +37,6 @@ const Contact = () => {
     onSubmit: async (values, { resetForm }) => {
       setLoadingin(true);
       try {
-        alert(JSON.stringify(values), null, 2);
         const { data } = await axios.post(`${apiUrl}/contact`, values, {
           headers: { 'Content-Type': 'application/json' },
         });
@@ -131,15 +130,31 @@ const Contact = () => {
           <h3>INFORMATION</h3>
           <div className="contact_item">
             <CiMail />
-            <span>for.everrnewcontact@gmail.com</span>
+            <span>
+               <a href="mailto:for.everrnewcontact@gmail.com">
+               for.everrnewcontact@gmail.com
+               </a>
+            </span>
           </div>
           <div className="contact_item">
             <IoPhonePortraitOutline />
-            <span>+91 98765 43210</span>
+            <span>
+               <a href="tel:+91 9510434140">
+               +91 9510434140
+              </a>
+            </span>
           </div>
           <div className="contact_item">
             <HouseSidingOutlined />
-            <span>24 Moti Nagar, virat samrat bunglows, ahemadnagar, Surat , 367889 </span>
+           <span>
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=A-41+Balgopal+Society,+Near+Sai+Chokdi,+Manjalpur,+Vadodara+390011"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      A-41 Balgopal Society, Near Sai Chokdi, Manjalpur, Vadodara 390011
+    </a>
+  </span>
         </div>
         </div>
       </div>

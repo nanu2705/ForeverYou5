@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import './Footer.scss';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -14,11 +14,6 @@ import axios from 'axios';
 const Footer = () => {
   const { setLoadingin, setMessage, setOpenalert, apiUrl } = useContext(MyContext);
 
-  const [openQuickLinks, setOpenQuickLinks] = useState(false);
-  const [openSupport, setOpenSupport] = useState(false);
-
-  const toggleQuickLinks = () => setOpenQuickLinks(!openQuickLinks);
-  const toggleSupport = () => setOpenSupport(!openSupport);
 
   const formik = useFormik({
     initialValues: {
@@ -63,11 +58,9 @@ const Footer = () => {
         </div>
 
         <div className="second">
-          <div className="footer-section-header" onClick={toggleQuickLinks}>
-            <h3>Quick Links</h3>
-            <KeyboardArrowDownIcon className={openQuickLinks ? 'rotate' : ''} />
+          <div className="footer-section-header">
+            <h3>Quick Links</h3>          
           </div>
-          {openQuickLinks && (
             <div className="footer-links">
               <a href="/">Home</a>
               <a href="/about">About Us</a>
@@ -75,21 +68,16 @@ const Footer = () => {
               <a href="/privacy-policy">Privacy Policy</a>
               <a href="/terms-and-conditions">Terms of Service</a>
             </div>
-          )}
         </div>
 
         <div className="third">
-          <div className="footer-section-header" onClick={toggleSupport}>
+          <div className="footer-section-header">
             <h3>Support</h3>
-            <KeyboardArrowDownIcon className={openSupport ? 'rotate' : ''} />
           </div>
-          {openSupport && (
             <div className="footer-links">
               <a href="/return-refund-policy">Return Policy</a>
               <a href="/shipping-policy">Shipping Info</a>
-              <a href="/admin">Admin</a>
             </div>
-          )}
         </div>
 
         <div className="news">

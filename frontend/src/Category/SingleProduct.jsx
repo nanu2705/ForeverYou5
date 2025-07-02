@@ -13,6 +13,7 @@ const SingleProduct = () => {
 
     const{product}=useParams()
     const{single}=useParams()
+    
 
     const {isProductInCart,isProductInWish,handlewish,handletime,api,handleimg,issize,handleCart,showSize,size,setShow,handleMouseMove,show,cursorPosition,big,shareToWhatsApp,shareToPinterest} = useContext(MyContext)
   return (
@@ -58,8 +59,8 @@ const SingleProduct = () => {
                       <div className="product-title">{i.productname}</div>
                       
                       <div class="product-price">
-                        <span>${i.productprice}</span>
-                        <span>${i.productoldprice}</span> <br />
+                        <span>₹{i.productprice}</span>
+                        <span>₹{i.productoldprice}</span> <br />
                       
                       </div>
                           <p>MRP Inclusive of all taxes</p>
@@ -83,18 +84,9 @@ const SingleProduct = () => {
                         { i.tomorrow ? <span>Get it by Tomorrow</span> : <span>Get it by 3-5 days</span>
                         }
                       </div> */}
-                     <div className="product-description">
-                      <h3>About this Product</h3>
-                      {i.description && i.description.map((desc, index) => (
-                       <p key={index}>{desc.text}</p>
-                       ))}
-                     </div>
 
-                     <div className="product-returnpolicy">
-                      NOTE: To be eligible for return or exchange, please ensure you record a clear unboxing video from the moment you open the package, as it will serve as proof in case of any issues.
-                     </div>
             
-                        <div class="btn">
+                        <div class="cart-btn">
                       {  !isProductInCart(o.id,i.id)?
                         
                           <button onClick={()=>handleCart(o.id,i.id,i.productimg,i.productname,i.productprice)}>Add to Cart</button>:
@@ -106,6 +98,17 @@ const SingleProduct = () => {
                           <button onClick={() => window.location.href='/wish'}>Go To Wish </button>
                       }
                         </div>
+
+                      <div className="product-description">
+                      <h3>About this Product</h3>
+                      {i.description && i.description.map((desc, index) => (
+                       <p key={index}>{desc.text}</p>
+                       ))}
+                     </div>
+
+                     <div className="product-returnpolicy">
+                      NOTE: To be eligible for return or exchange, please ensure you record a clear unboxing video from the moment you open the package, as it will serve as proof in case of any issues.
+                     </div>  
                       
                         <div className="share">
                     

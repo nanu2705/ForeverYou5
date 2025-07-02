@@ -9,6 +9,7 @@ import AdminContactList from "../AdminContactList/AdminContactList";
 import AdminNewsletter from "../AdminNewsletter/AdminNewsletter";
 import AdminTopCategory from "../AdminTopCategory/AdminTopCategory";
 import MyContext from "../Context/MyContext";
+import AdminSlider from "../AdminSlider/AdminSlider";
 
 
 
@@ -40,14 +41,17 @@ const Home = () => {
           <li className={activeTab === "category" ? "active" : ""} onClick={() => setActiveTab("category")}>
             Add Top Category
           </li>
+           <li className={activeTab === "slider" ? "active" : ""} onClick={() => setActiveTab("slider")}>
+            Slider
+          </li>
+          <li className={activeTab === "promo" ? "active" : ""} onClick={() => setActiveTab("promo")}>
+            Promo
+          </li>
           <li className={activeTab === "wishlist" ? "active" : ""} onClick={() => setActiveTab("wishlist")}>
             Wishlist
           </li>
           <li className={activeTab === "cart" ? "active" : ""} onClick={() => setActiveTab("cart")}>
             Cart
-          </li>
-          <li className={activeTab === "promo" ? "active" : ""} onClick={() => setActiveTab("promo")}>
-            Promo
           </li>
           <li className={activeTab === "contact" ? "active" : ""} onClick={() => setActiveTab("contact")}>
             Contact Submissions
@@ -55,6 +59,7 @@ const Home = () => {
            <li className={activeTab === "news" ? "active" : ""} onClick={() => setActiveTab("news")}>
             Newsletter Subscribers
           </li>
+         
 
          
         </ul>
@@ -72,6 +77,7 @@ const Home = () => {
         {activeTab === "promo" && <AdminPromoManager />}
         {activeTab === "contact" && <AdminContactList />}
         {activeTab === "news" && <AdminNewsletter/>}
+        {activeTab === "slider" && <AdminSlider/>}
 
       </main>
     </div>

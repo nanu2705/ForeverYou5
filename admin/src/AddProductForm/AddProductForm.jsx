@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import "./AddProductForm.scss";
 import { useFormik } from "formik";
@@ -70,12 +70,13 @@ const AddProductForm = () => {
         S: false,
         M: false,
         L: false,
+        XL: false,
+        XXL: false,
+        Unstitched: false,
         2.2:false,
         2.4:false,
         2.6:false,
         2.8:false,
-        2.10:false,
-        2.12:false,
       },
       description: [],
       images: [],
@@ -165,12 +166,12 @@ const AddProductForm = () => {
       <form className="admin-form" onSubmit={formik.handleSubmit}>
         <h2>Add New Product</h2>
 
-        <input name="name" placeholder="Product Name" value={formik.values.name} onChange={formik.handleChange} />
-        <input name="productbrand" placeholder="Brand" value={formik.values.productbrand} onChange={formik.handleChange} />
+        <input name="name" type="text" placeholder="Product Name" value={formik.values.name} onChange={formik.handleChange} />
+        <input name="productbrand" type="text" placeholder="Brand" value={formik.values.productbrand} onChange={formik.handleChange} />
         <input name="price" type="number" placeholder="Price" value={formik.values.price} onChange={formik.handleChange} />
         <input name="oldprice" type="number" placeholder="Old Price (optional)" value={formik.values.oldprice} onChange={formik.handleChange} />
-        <input name="category" placeholder="Category (e.g. Sports Wear)" value={formik.values.category} onChange={formik.handleChange} />
-        <input name="title" placeholder="Title (e.g. women, men)" value={formik.values.title} onChange={formik.handleChange} />
+        <input name="category" type="text" placeholder="Category (e.g. Sports Wear)" value={formik.values.category} onChange={formik.handleChange} />
+        <input name="title" type="text" placeholder="Title (e.g. women, men)" value={formik.values.title} onChange={formik.handleChange} />
 
         <label>Category Image:</label>
         <input type="file" name="category_img" accept="image/*" onChange={handleCategoryImgChange} />

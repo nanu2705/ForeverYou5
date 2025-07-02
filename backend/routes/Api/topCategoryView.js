@@ -56,7 +56,7 @@ app.get('/api/products-by-top-category/:ref', (req, res) => {
 
     // Get top category block from category.json
     const matchedTopCat = topCategories.find(
-      (cat) => cat.categoryRef.toLowerCase() === ref
+      (cat) => cat.title.toLowerCase() === ref
     );
 
     if (!matchedTopCat) {

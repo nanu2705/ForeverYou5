@@ -7,9 +7,16 @@ import LockIcon from '@mui/icons-material/Lock';
 import { InputAdornment, TextField } from '@mui/material';
 import MyContext from '../Context/MyContext';
 import axios from 'axios';
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 
 const Login = () => {
   const { apiUrl,setLoadingin, loadingin, openregister, handleLogin, setMessage, setOpenalert } = useContext(MyContext);
+
+
+  const [showPassword, setShowPassword] = React.useState(false);
+const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
+
 
   const formik = useFormik({
     initialValues: {
@@ -92,7 +99,7 @@ const Login = () => {
               }}
             />
             <TextField
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               id="password"
               name="password"
               className='email'
@@ -115,6 +122,11 @@ const Login = () => {
                     <LockIcon />
                   </InputAdornment>
                 ),
+                 endAdornment: (
+      <InputAdornment position="end" style={{ cursor: "pointer" }} onClick={togglePasswordVisibility}>
+        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+      </InputAdornment>
+    )
               }}
             />
             {/*<h4>Forgot Password?</h4>*/}

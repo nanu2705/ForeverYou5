@@ -6,8 +6,8 @@ import axios from 'axios';
 
 const MyContextProvider = ({children}) => {
 
-  // const apiUrl = 'http://localhost:3034';
-  const apiUrl = 'https://foreveryou5-4.onrender.com'
+  const apiUrl = 'http://localhost:3034';
+  // const apiUrl = 'https://foreveryou5-4.onrender.com'
        //for api calling start
 
  const[apiloader,setApiloader]=useState(true)
@@ -29,6 +29,7 @@ useEffect(() => {
   fetchData();
 }, [apiUrl]);
 // for api calling end
+
 
 
 
@@ -547,14 +548,14 @@ const [shipping, setShipping] = useState(()=>{
  
 
 //  for single mouse move start
- const handleMouseMove = (event) => {
- const image = document.getElementById('imgpp');
- const rect = image.getBoundingClientRect();
- const x = event.clientX - rect.left - 25; 
- const y = event.clientY - rect.top - 25; 
- 
- setCursorPosition({ x, y });
- };
+  const handleMouseMove = (event) => {
+  const image = document.getElementById('imgpp');
+  const rect = image.getBoundingClientRect();
+  const x = event.clientX - rect.left + 50; 
+  const y = event.clientY - rect.top + 50; 
+  
+  setCursorPosition({ x, y });
+  };
  //  for single mouse move end
 
  

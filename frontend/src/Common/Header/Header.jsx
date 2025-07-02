@@ -13,6 +13,7 @@ import logo from "../../Assets/newlogo.png"
 
 
 
+
   
 
   const Header = () => { 
@@ -29,7 +30,8 @@ const [menuOpen, setMenuOpen] = useState(false);
   
   return ( 
     <>
-    <div className='head'> 
+    <div className='head'>
+
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
@@ -37,26 +39,20 @@ const [menuOpen, setMenuOpen] = useState(false);
       <div className={`left ${menuOpen ? 'open' : ''}`}>
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/services">Services</a>
         <a href="/contact">Contact</a>
       
-<span className='wishes' onClick={() => window.location.href='/wish'}>Wishlist</span> 
+    <span className='wishes' onClick={() => window.location.href='/wish'}>Wishlist</span> 
        
-     
-        <span className="scart" onClick={() => window.location.href='/cart'}> Cart</span>
-
-
-      
-
+    <span className="scart" onClick={() => window.location.href='/cart'}> Cart</span>
        </div>
 
       {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
       
+
       <div className="middle"  onClick={() =>Navigate('/')}>
         <img src={logo} alt="" />
       </div>
-
-       
+ 
 
       <div className="right">  
 
@@ -64,7 +60,7 @@ const [menuOpen, setMenuOpen] = useState(false);
         <div className='search-anim'>
           <div className='search-bar'><span><SearchIcon/></span> <input type="text" placeholder='What are you looking for ?' value={input} onChange={(e) => setInput(e.target.value)} />
           <div class="search-list">
- {input &&
+   {input &&
     api.flatMap((b) => {
       const inputLower = input.toLowerCase();
       const matches = [];
@@ -106,53 +102,46 @@ const [menuOpen, setMenuOpen] = useState(false);
           </div>
 
       </div>}
+
       {!opensearch?
-      <span  onClick={() => setOpensearch(true) } ><SearchIcon/></span> :
+      <span  onClick={() => setOpensearch(true) }  className='small-search'><SearchIcon/></span> :
       <span  onClick={() => setOpensearch(false) || setInput('') } ><CloseIcon/></span>
       }
-        <span className='wishes'
-        onClick={() => window.location.href='/wish'}><FavoriteIcon style={{ color: wish && wish.length>0 && 'pink' }}/></span> 
+
+      <span className='wishes'
+      onClick={() => window.location.href='/wish'}><FavoriteIcon style={{ color: wish && wish.length>0 && 'pink' }}/></span> 
        
-     
-        <span className="scart" onClick={() => window.location.href='/cart'}> <ShoppingCartIcon/><b>{cart?.length || 0}</b></span>
+     <span className="scart" 
+     onClick={() => window.location.href='/cart'}> <ShoppingCartIcon/><b>{cart?.length || 0}</b></span>
         
        
-{  !token ? <span onClick={handleLoginOpen} ><PersonIcon/></span>:
+      {!token ? <span onClick={handleLoginOpen} ><PersonIcon/></span>:
         <div className='nameo' onClick={() =>  setDetails(!details)} ><strong>{userdata && userdata.name}</strong>Account</div>}
       
 
-    { details &&
+      {details &&
        <div class="account-show" >
     
         <li onClick={() => window.location.href='/account-details'}>
           <span><VerifiedUser/></span>
           <span class="text">Account-Details</span>
           </li>
-          <li onClick={()=>window.location.href='/shipping-details'}>
 
+          <li onClick={()=>window.location.href='/shipping-details'}>
           <span><LocalShipping/></span>
           <span class="text">Shipping-Details</span>
         </li>
 
-        <li onClick={()=>window.location.href='/order'}>
-          <span><TurnSlightRight/></span>
-          <span class="text">Order-details</span>
-        </li>
         <li onClick={handleLogout}>
           <span><LogoutOutlined/></span>
           <span class="text" >Logout</span>
         </li>
       
-
-       
-       </div>}
-      
+       </div>}      
       </div>
 
- 
     </div>
   
-
     <div className='search-mobile'><span><SearchIcon/></span> <input type="text" placeholder='Search on Forever You...' value={input} onChange={(e) => setInput(e.target.value)} />
    
     <div class="searchlistmobile">

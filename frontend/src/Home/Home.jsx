@@ -27,7 +27,7 @@ const Home = () => {
       <h3>Top Categories</h3>
       <div className="top-category-grid">
         {topCategories.map(cat => (
-          <Link key={cat.id} to={`/top-category/${cat.categoryRef}`} className="top-category-card">
+          <Link key={cat.id} to={`/top-category/${cat.title}`} className="top-category-card">
             <img src={cat.img} alt={cat.title} />
             <h4>{cat.title}</h4>
           </Link>
