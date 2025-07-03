@@ -45,19 +45,6 @@ const AddProductForm = () => {
     }
   };
 
-  // Delete full category
-  const handleDeleteCategory = async (category) => {
-    if (window.confirm(`Are you sure you want to delete the entire category "${category}"?`)) {
-      try {
-        await axios.delete(`${apiUrl}/api/data/category/${encodeURIComponent(category)}`);
-        alert(`✅ Category "${category}" deleted successfully`);
-        fetchData();
-      } catch (err) {
-        alert("❌ Error deleting category");
-      }
-    }
-  };
-
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -81,6 +68,7 @@ const AddProductForm = () => {
       description: [],
       images: [],
       category_img: null,
+      video: null,
       review: 0,
       tomorrow: false,
     },
@@ -96,6 +84,9 @@ const AddProductForm = () => {
       formData.append("productbrand", values.productbrand);
       formData.append("review", values.review);
       formData.append("tomorrow", values.tomorrow);
+      if (values.video) {
+      formData.append("video", values.video);
+      }
 
       // Format description
       const formattedDescription = descriptionText
@@ -205,12 +196,22 @@ const AddProductForm = () => {
         <label>Main Product Images:</label>
         <input type="file" name="images" multiple onChange={handleFileChange} />
 
-        <label>Side Image 1:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(0, e)} />
-        <label>Side Image 2:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(1, e)} />
-        <label>Side Image 3:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(2, e)} />
+        <label>Side Images: (Up to 4 images only)</label>
+{sideImageFiles.map((file, index) => (
+  <div key={index}>
+    <input type="file" onChange={(e) => handleSideImageChange(index, e)} />
+  </div>
+))}
+
+{sideImageFiles.length < 4 && (
+  <button type="button" onClick={() => setSideImageFiles([...sideImageFiles, null])}>
+    ➕ Add Another Side Image
+  </button>
+)}
+
+        <label>Product Video (optional):</label>
+         <input type="file" accept="video/*" onChange={(e) => formik.setFieldValue("video", e.currentTarget.files[0])} />
+
 
         <button type="submit">Submit</button>
       </form>
@@ -225,6 +226,7 @@ const AddProductForm = () => {
             .map((prod) => (
               <div key={prod.id} className="product-card">
                 <img src={prod.productimg} alt={prod.productname} width={80} />
+                <p>{prod.productbrand}</p>
                 <p><b>{prod.productname}</b> - ₹{prod.productprice}</p>
                 <p>Category: {prod.category}</p>
                 <ul className="desc-preview">
@@ -236,17 +238,6 @@ const AddProductForm = () => {
             ))}
       </div>
 
-      <div className="category-list">
-        <h2>Delete Categories</h2>
-        {[...new Set(products.map((p) => p.category))].map((cat, idx) => (
-          <div key={idx} className="category-item">
-            <span>{cat}</span>
-            <button className="delete-category-btn" onClick={() => handleDeleteCategory(cat)}>
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

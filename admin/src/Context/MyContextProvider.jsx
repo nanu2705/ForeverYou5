@@ -6,9 +6,9 @@ const MyContextProvider = ({children}) => {
 
 
 
-    //  const apiUrl = 'http://localhost:3034'  ;
+     const apiUrl = 'http://localhost:3034';
 
-  const apiUrl = 'https://foreveryou5-4.onrender.com'
+  // const apiUrl = 'https://foreveryou5-4.onrender.com'
 
 
      //for home start
@@ -127,7 +127,8 @@ const MyContextProvider = ({children}) => {
 
     const [products, setProducts] = useState([]);
   const [descriptionText, setDescriptionText] = useState("");
-  const [sideImageFiles, setSideImageFiles] = useState([null, null, null]);
+  const [sideImageFiles, setSideImageFiles] = useState([null, null, null, null]); // Add more as needed
+
 
   //product admin end
 

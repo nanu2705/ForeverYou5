@@ -39,7 +39,7 @@
 
  @include md {  
      width: 80%;
-     height: 500px;
+     height: 440px;
     }
 
 img{
@@ -75,6 +75,12 @@ img{
                     }
             }
         }
+
+       .video-preview{
+        height: 100px;
+                width: 100px;
+                border: 1px solid black;
+       } 
     }
 
     .content{
