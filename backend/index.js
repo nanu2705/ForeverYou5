@@ -177,24 +177,6 @@ app.use('/', sliderroute);
 
 
 
-// retrive contact data
-
-// app.get('/contact-info',async(req,res) =>{
-  
-  
-//     const Contactdata = await User.find()
-       
-//         res.json({data:Contactdata})
-    
-        
-//     })
-
-
-
-
-
-
-
 
 
 // WARNING: This will delete ALL users. Use carefully.

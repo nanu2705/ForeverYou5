@@ -1,63 +1,9 @@
-.container-boxx {
-    
-
-    .box {
-        width: 100px;
-        height: 100px;
-        position: relative;
-        transform-style: preserve-3d;
-        animation: rotate3D 4s linear infinite;
-
-        div {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: rgba(0, 0, 0, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.632); 
-
-            &:nth-child(1){
-                transform: translateZ(50px);
-            }
-
-            &:nth-child(2){
-                transform: rotateY(180deg) translateZ(50px);
-            }
-
-            &:nth-child(3){
-                transform: rotateY(-90deg) translateZ(50px);
-            }
-
-            &:nth-child(4){
-                transform: rotateY(90deg) translateZ(50px);
-            }
-
-            &:nth-child(5){
-                transform: rotateX(90deg) translateZ(50px);
-            }
-
-            &:nth-child(6){
-                transform: rotateX(-90deg) translateZ(50px);
-            }
-        }
-    }
-}
-
-
-@keyframes rotate3D {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    100% {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
-}
-
 
 .canva-loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff33;
   perspective: 1000px; 
     position: fixed;
     top: 50%;
@@ -77,7 +23,7 @@
     font-size: 3rem;
     font-weight: 700;
     position: relative;
-    color: #ccc; // base text color
+    color: #000000a1;
     overflow: hidden;
 
     &::before {

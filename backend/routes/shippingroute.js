@@ -141,7 +141,38 @@ app.post('/order', async (req, res) => {
       user.cart = [];
       await user.save();
 
-      res.json({ success: true, message: 'Order placed successfully' });
+      // ✅ Send Email Confirmation
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'nandanipatel057@gmail.com', // 🔁 Replace with your email
+          pass: 'pnso qpbr gewh aqdo'     // 🔁 Use Gmail App Password
+        }
+      });
+
+      const emailBody = `
+        <h2>Thank you for your order at Foreveryou!</h2>
+        <p><strong>Order Date:</strong> ${new Date(order.orderDate).toLocaleString()}</p>
+        <p><strong>Payment Mode:</strong> ${order.paymentMode}</p>
+        <p><strong>Total:</strong> ₹${order.total}</p>
+        <h3>Ordered Products:</h3>
+        <ul>
+          ${order.products.map(p => `
+            <li>${p.productname} (₹${p.productprice} x ${p.quantity})</li>
+          `).join('')}
+        </ul>
+        <br/>
+        <p>We will ship your products soon. Stay fashionable!<br/><strong>- Team Foreveryou</strong></p>
+      `;
+
+      await transporter.sendMail({
+        from: 'Foreveryou <nandanipatel057@gmail.com>',
+        to: user.email,
+        subject: 'Order Confirmation - Foreveryou',
+        html: emailBody
+      });
+
+      res.json({ success: true, message: 'Order placed and email sent successfully' });
     });
   } catch (error) {
     console.error('Order Error:', error);

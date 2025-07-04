@@ -38,7 +38,7 @@ const Tshirt = ({ single }) => {
                   </div>
                   <div className="productcontent">
                     <div className="productbrand">{i.productbrand}</div>
-                    <div className="productbrand">{i.productname}</div>
+                    {/* <div className="productbrand">{i.productname}</div> */}
                     <div className="productbrand">₹{i.productprice}</div>
                   </div>
                   <div className="producttop">

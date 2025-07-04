@@ -68,7 +68,6 @@ const AddProductForm = () => {
       description: [],
       images: [],
       category_img: null,
-      video: null,
       review: 0,
       tomorrow: false,
     },
@@ -84,9 +83,6 @@ const AddProductForm = () => {
       formData.append("productbrand", values.productbrand);
       formData.append("review", values.review);
       formData.append("tomorrow", values.tomorrow);
-      if (values.video) {
-      formData.append("video", values.video);
-      }
 
       // Format description
       const formattedDescription = descriptionText
@@ -196,22 +192,14 @@ const AddProductForm = () => {
         <label>Main Product Images:</label>
         <input type="file" name="images" multiple onChange={handleFileChange} />
 
-        <label>Side Images: (Up to 4 images only)</label>
-{sideImageFiles.map((file, index) => (
-  <div key={index}>
-    <input type="file" onChange={(e) => handleSideImageChange(index, e)} />
-  </div>
-))}
-
-{sideImageFiles.length < 4 && (
-  <button type="button" onClick={() => setSideImageFiles([...sideImageFiles, null])}>
-    ➕ Add Another Side Image
-  </button>
-)}
-
-        <label>Product Video (optional):</label>
-         <input type="file" accept="video/*" onChange={(e) => formik.setFieldValue("video", e.currentTarget.files[0])} />
-
+        <label>Side Image 1:</label>
+        <input type="file" onChange={(e) => handleSideImageChange(0, e)} />
+        <label>Side Image 2:</label>
+        <input type="file" onChange={(e) => handleSideImageChange(1, e)} />
+        <label>Side Image 3:</label>
+        <input type="file" onChange={(e) => handleSideImageChange(2, e)} />
+        <label>Side Image 4:</label>
+        <input type="file" onChange={(e) => handleSideImageChange(3, e)} />
 
         <button type="submit">Submit</button>
       </form>

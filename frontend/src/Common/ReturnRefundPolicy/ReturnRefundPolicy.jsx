@@ -10,7 +10,7 @@ const ReturnRefundPolicy = () => {
 
       <h2>1. Eligibility for Return or Exchange</h2>
       <p>
-        At Foreveryou, we strive to ensure your satisfaction. If you're not completely happy with your purchase, you may request a return or exchange within <strong>7 days</strong> of delivery. The item must be:
+        At Foreveryou, we strive to ensure your satisfaction. If you're not completely happy with your purchase, you may request a return or exchange within <strong>4 days</strong> of delivery. The item must be:
       </p>
       <ul>
         <li>Unused and in original condition</li>
@@ -53,16 +53,17 @@ const ReturnRefundPolicy = () => {
         If you receive a damaged or incorrect item, please contact us within 48 hours of delivery with unboxing video proof. We will arrange a replacement or refund at no extra cost to you.
       </p>
 
-      <h2>7. Cancellations</h2>
-      <p>
-        Orders can be cancelled only before they are shipped. Once shipped, cancellation is not possible.
-      </p>
-
       <h2>8. Contact Us</h2>
       <p>
         For any questions about returns, exchanges, or refunds, reach out to us at:<br />
-        📧 Email:<a href='mailto:support@foreveryou.in'> support@foreveryou.in</a> <br />
-        📍 Address: <a href="https://goo.gl/maps/4Z1b7d5f8xQ2">Vadodara, Gujarat, India</a><br />
+        📧 Email:<a href='mailto:foreveryou5contact@gmail.com'> foreveryou5contact@gmail.com</a> <br />
+        📍 Address: <a
+      href="https://www.google.com/maps/search/?api=1&query=A-41+Balgopal+Society,+Near+Sai+Chokdi,+Manjalpur,+Vadodara+390011"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      A-41 Balgopal Society, Near Sai Chokdi, Manjalpur, Vadodara 390011
+    </a><br />
 
       </p>
     </div>

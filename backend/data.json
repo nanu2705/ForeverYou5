@@ -1,10 +1,97 @@
 [
   {
-    "id": 1751467186885,
+    "id": 1751618180103,
     "title": "Women",
     "category": "Lehenga Sets",
     "route_category": "Lehenga-Sets",
-    "img": "/uploads/1751467186780-VIN09578.jpg",
-    "products": []
+    "img": "/uploads/1751618179862-VIN09252.jpg",
+    "products": [
+      {
+        "id": 1751618180102,
+        "productimg": "/uploads/1751618178750-VIN09178.jpg",
+        "productbrand": "Sunshine Bloom Embroidered Lehenga Set",
+        "productname": "Brighten up your festive look with this radiant yellow and cream lehenga set, featuring intricate floral embroidery and a stunning dupatta.",
+        "route_productname": "Brighten-up-your-festive-look-with-this-radiant-yellow-and-cream-lehenga-set,-featuring-intricate-floral-embroidery-and-a-stunning-dupatta.",
+        "productprice": 57000,
+        "productoldprice": 61298,
+        "review": 4.1,
+        "tomorrow": false,
+        "description": [
+          {
+            "text": "Step into elegance with our Sunshine Bloom Lehenga Set, a perfect blend of tradition and glamour. The lehenga is crafted in a soft cream base adorned with vibrant yellow floral embroidery and golden threadwork that adds a luminous touch. The matching sleeveless blouse comes with a square neckline and a bold lotus motif in the center, symbolizing grace and purity. The look is completed with a flowy yellow net dupatta detailed with delicate sequin and thread embroidery along the borders. Ideal for weddings, haldi ceremonies, festive gatherings, and special occasions."
+          },
+          {
+            "text": "🧵 Fabric & Details"
+          },
+          {
+            "text": "Lehenga Fabric: Satin silk with organza overlay"
+          },
+          {
+            "text": "Blouse Fabric: Satin silk"
+          },
+          {
+            "text": "Dupatta Fabric: Soft net with embroidery"
+          },
+          {
+            "text": "Embroidery Work: Zari, resham thread, and sequin floral motifs"
+          },
+          {
+            "text": "Inner Lining: Cotton lining for added comfort"
+          },
+          {
+            "text": "Closure: Side zip and drawstring for the lehenga; back hook for blouse"
+          },
+          {
+            "text": "📐 Available Sizes"
+          },
+          {
+            "text": "S, M, L"
+          },
+          {
+            "text": "(Custom sizing available on request)"
+          },
+          {
+            "text": "🎯 Ideal For"
+          },
+          {
+            "text": "Wedding functions"
+          },
+          {
+            "text": "Haldi/Mehendi ceremonies"
+          },
+          {
+            "text": "Daytime festive events"
+          },
+          {
+            "text": "Photoshoots and pre-wedding celebrations"
+          }
+        ],
+        "side_image": [
+          {
+            "in_image": "/uploads/1751618178930-VIN09180.jpg"
+          },
+          {
+            "in_image": "/uploads/1751618179172-VIN09193.jpg"
+          },
+          {
+            "in_image": "/uploads/1751618179355-VIN09186.jpg"
+          },
+          {
+            "in_image": "/uploads/1751618179770-VIN09178.jpg"
+          }
+        ],
+        "sizes_product": [
+          {
+            "size": "S"
+          },
+          {
+            "size": "M"
+          },
+          {
+            "size": "L"
+          }
+        ]
+      }
+    ]
   }
 ]

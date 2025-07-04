@@ -32,43 +32,25 @@ const SingleProduct = () => {
                 .map((i)=>{
                     return(
                           <div class="single-product">
-                    <div className="image">
-  <div className="small-img">
-    {i.side_images?.map((si, index) => (
-  <img
-    key={index}
-    src={si}
-    alt={`side-img-${index}`}
-    onMouseEnter={() => handleimg(si)}
-  />
-))}
-
- {i.video && (
-  <div className="video-preview">
-    <video width="100%" controls muted>
-      <source src={i.video} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-)}
-  </div>
-
- 
-
-  <div className="big-img">
-    <img
-      onMouseMove={handleMouseMove}
-      src={i.productimg || i.video}
-      alt="main"
-      id="imgpp"
-      onMouseEnter={handletime}
-      onMouseLeave={() => setShow(false)}
-    />
-  </div>
-
-  
-</div>
-
+                    <div class="image">
+        
+                   <div class="small-img">
+              { i.side_image.map((si)=>{
+                return(
+                     <img src={si.in_image} alt="" onMouseEnter={() => handleimg(si.in_image)}/>
+                )
+              })
+              } 
+              </div>
+            
+        
+              <div class="big-img">
+                <img onMouseMove={handleMouseMove} 
+                  src={i.productimg} alt="" id='imgpp'
+                  onMouseEnter={handletime} 
+                  onMouseLeave={() => setShow(false)}/>
+              </div>
+            </div>
          
         
             <div class="content">

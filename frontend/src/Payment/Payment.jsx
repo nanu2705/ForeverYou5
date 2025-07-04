@@ -9,7 +9,6 @@ const Payment = () => {
     loadingin,
     token,
     TotalValue,
-    Navigate,
     apiUrl,
     cart,
     setCart,
@@ -40,16 +39,10 @@ const Payment = () => {
       });
 
       if (data.success) {
-        // ✅ Clear cart
-        setCart([]);
-        sessionStorage.removeItem("cart");
-
-        // ✅ Save order for order page view
-        sessionStorage.setItem("orderDetails", JSON.stringify(data.order));
-
-        // ✅ Navigate to order confirmation page
-        Navigate("/order");
-      } else {
+  setCart([]);
+  sessionStorage.removeItem("cart");
+  alert("Order placed! Details have been emailed to your registered email address.");
+} else {
         alert(data.error || "Something went wrong");
       }
     } catch (error) {

@@ -42,6 +42,11 @@
      height: 440px;
     }
 
+ @include sx{
+    width: 90%;
+    height: 350px;
+ }   
+
 img{
     height: 100%;
     width: 100%;
@@ -75,19 +80,13 @@ img{
                     }
             }
         }
-
-       .video-preview{
-        height: 100px;
-                width: 100px;
-                border: 1px solid black;
-       } 
     }
 
     .content{
         width: 50%;
        padding: 10px 0;    
        align-self: flex-start;
-
+ 
        @include md {
        width: 90%; 
        margin: 0 auto;    
@@ -117,11 +116,7 @@ img{
                 }
             }
 
-          
-        }
-
-
-        p{
+           p{
             font-family:sans-serif;
             max-width: 300px;
             margin: 5px 0 20px 0;
@@ -129,6 +124,10 @@ img{
             font-size: 12px;
           
         }
+        }
+
+
+       
 
        .sizes{
        font-size: 20px;
@@ -162,25 +161,25 @@ img{
                 color: red;         
         }
 
-   .product-tomorrow{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: 700;
+//    .product-tomorrow{
+//             display: flex;
+//             align-items: center;
+//             gap: 10px;
+//             margin-top: 20px;
+//             font-size: 20px;
+//             font-weight: 700;
 
-            @include md {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+//             @include md {
+//                 flex-direction: column;
+//                 align-items: flex-start;
+//             }
 
-            span{
-                color: #7c375093;
-                font-size: 12px;
-                font-weight: 900;
-            }
-        }
+//             span{
+//                 color: #7c375093;
+//                 font-size: 12px;
+//                 font-weight: 900;
+//             }
+//         }
     
 
 .product-description {
@@ -209,12 +208,11 @@ img{
     line-height: 1;
     font-size: 15px;
     color: #444;
-    
 
     @include md{
        font-size: 13px;
        line-height: 1.5;
-       padding: 0 20px;
+       padding: 0 10px;
        
     }
   }

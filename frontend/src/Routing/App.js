@@ -20,7 +20,6 @@ import Account from '../Profile/Account/Account'
 import Cart from '../Category/Cart/Cart'
 import Payment from '../Payment/Payment'
 import Confirm from '../Confirm/Confirm'
-import Order from '../Order/Order'
 import AboutPage from '../Common/AboutPage/AboutPage'
 import CustomerSupport from '../Common/CustomerSupport/CustomerSupport'
 import TopCategory from '../Category/TopCategory'
@@ -69,7 +68,6 @@ const App = () => {
           <Route path='/shipping-details' element={<Checkout show={false}/>}/>
           <Route path='/payment' element={<Payment/>}/>
           <Route path='/confirm' element={<Confirm/>}/>
-          <Route path='/order' element={<Order/>}/> 
           <Route path='/about' element={<AboutPage/>}/>
           <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
           <Route path='/terms-and-conditions' element={<TermsAndConditions/>}/>

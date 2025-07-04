@@ -18,15 +18,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
 });
 
-const upload = multer({
-  storage, // ✅ shorthand for storage: storage
-  limits: { fileSize: 50 * 1024 * 1024 },
-}).fields([
-  { name: "images", maxCount: 10 },
-  { name: "side_images", maxCount: 4 },
-  { name: "category_img", maxCount: 1 },
-  { name: "video", maxCount: 1 },
-]);
+const upload = multer({ storage });
 
 
 

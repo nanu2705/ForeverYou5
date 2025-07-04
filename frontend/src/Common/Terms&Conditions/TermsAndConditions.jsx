@@ -89,8 +89,13 @@ const TermsAndConditions = () => {
       <h2>N. Contact Us</h2>
       <p>
         For questions or concerns regarding these Terms &amp; Conditions:<br />
-        📧 Email: <a href="mailto:support@foreveryou.in">support@foreveryou.in</a><br />
-        📍 Address: <a href="https://goo.gl/maps/4Z1b7d5f8xQ2">Vadodara, Gujarat, India</a><br />
+        📧 Email: <a href="mailto:foreveryou5contact@gmail.com">foreveryou5contact@gmail.com</a><br />
+        📍 Address: <a
+      href="https://www.google.com/maps/search/?api=1&query=A-41+Balgopal+Society,+Near+Sai+Chokdi,+Manjalpur,+Vadodara+390011"
+      target="_blank"
+      rel="noopener noreferrer"
+    >A-41 Balgopal Society, Near Sai Chokdi, Manjalpur, Vadodara 390011
+    </a><br />
         
       </p>
     </div>
