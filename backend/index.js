@@ -61,7 +61,11 @@ dotenv.config();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://your-frontend-domain.com', // your Hostinger domain
+  credentials: true, // if you use cookies or auth headers
+}));
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
