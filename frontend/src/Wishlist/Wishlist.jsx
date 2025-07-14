@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Wishlist.scss';
 import axios from 'axios';
 import MyContext from '../Context/MyContext';
+import { Helmet } from 'react-helmet-async';
 
 const Wishlist = () => {
-  const {apiUrl, wish, setWish, removeProductFromWish, token } = useContext(MyContext);
+  const {apiUrl, wish, setWish, removeProductFromWish, token  } = useContext(MyContext);
   const [loading, setLoading] = useState(true);
 
   // for wish items fetching start
@@ -42,23 +43,43 @@ const Wishlist = () => {
 
   return (
     <div className="wishlist-container">
+      <Helmet>
+        <title>Wishlist</title>
+        <meta name="description" content="Wishlist page" />
+      </Helmet>      
       {wish && <h1>Wish Details</h1>}
       {wish && wish.length > 0 ? (
         <>
           {wish
-            .sort((a, b) => b._id.localeCompare(a._id))
-            .map((item) => (
-              <div className="wishlist-item" key={item.productid}>
-                <img src={item.productimg} alt={item.productname} className="wishlist-item-img" />
-                <div className="wishlist-item-details">
-                  <h3>{item.productname}</h3>
-                  <p>Price: ${item.productprice}</p>
-                  <div className="wishlist-item-controls">
-                    <button onClick={() => removeProductFromWish(item.categoryid, item.productid)}>Remove</button>
-                  </div>
-                </div>
-              </div>
-            ))}
+  .sort((a, b) => b._id.localeCompare(a._id))
+  .map((item) => (
+    <div className="wishlist-item" key={item.productid}>
+      
+      
+        <img
+          src={item.productimg}
+          alt={item.productname}
+          className="wishlist-item-img"
+        />
+     
+
+      <div className="wishlist-item-details">      
+         <span>{item.productbrand}</span>
+          <h3>{item.productname}</h3>
+   
+
+        <p>Price: ₹{item.productprice}</p>
+
+        <div className="wishlist-item-controls">
+          <button onClick={() => removeProductFromWish(item.categoryid, item.productid)}>
+            Remove
+          </button>
+           
+        </div>
+      </div>
+    </div>
+  ))}
+
         </>
       ) : (
         <p>No wish data</p>

@@ -8,6 +8,8 @@ import { IoPhonePortraitOutline } from "react-icons/io5";
 import MyContext from '../Context/MyContext';
 import axios from 'axios';
 import {  HouseSidingOutlined } from '@mui/icons-material';
+import { Helmet } from 'react-helmet-async';
+
 
 const Contact = () => {
   const { setOpenalert, apiUrl, setLoadingin, setMessage } = useContext(MyContext);
@@ -59,6 +61,10 @@ const Contact = () => {
 
   return (
     <div className='Register_main'>
+      <Helmet>
+              <title>Contact</title>
+              <meta name="description" content="Contact page" />
+            </Helmet>
       <h2 className='reg_heading'>WE WOULD LOVE TO HEAR FROM YOU</h2>
       <div className="main">
        

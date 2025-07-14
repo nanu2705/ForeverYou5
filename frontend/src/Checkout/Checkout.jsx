@@ -5,6 +5,7 @@ import './Checkout.scss';
 import LoginError from '../Profile/LoginError/LoginError';
 import MyContext from '../Context/MyContext';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const Checkout = ({show}) => {
   const {apiUrl, edit, setEdit, token, shipping, setShipping, loadingin, setLoadingin, setOpenalert, setMessage } = useContext(MyContext);
@@ -45,6 +46,10 @@ const Checkout = ({show}) => {
 
   return (
     <>
+          <Helmet>
+            <title>Shipping Details</title>
+            <meta name="description" content="Shipping Details page" />
+          </Helmet>
       {token ? (
         edit ? (
           <Formik

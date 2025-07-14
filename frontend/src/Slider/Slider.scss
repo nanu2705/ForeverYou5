@@ -1,56 +1,83 @@
-.slider {
-  overflow: hidden;
+.slider-wrapper {
+  position: relative;
   width: 100%;
-  padding: 20px 0;
+  overflow: hidden;
   background: #fff;
+  padding: 20px 0;
 
-  .slide-track {
-    display: flex;
-    width: calc(200%); // due to duplication
-    animation: scroll 30s linear infinite;
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    &.left {
+      left: 10px;
+    }
+
+    &.right {
+      right: 10px;
+    }
   }
 
-  .slide {
-    flex: 0 0 auto;
-    width: 250px;
-    margin-right: 20px;
+  .slider {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    white-space: nowrap;
 
-    @media (max-width: 1024px) {
-    width: 200px;
-    margin-right: 16px;
-}
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
-@media (max-width: 768px) {
-  
-    width: 150px;
-    margin-right: 12px;
-  
-}
+    .slide-track {
+      display: flex;
+      gap: 20px;
+    }
 
-@media (max-width: 480px) {
-  
-    width: 120px;
-    margin-right: 10px;
-  
-}
+    .slide {
+      flex: 0 0 auto;
+      width: 250px;
 
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      @media (max-width: 1024px) {
+        width: 200px;
+      }
+
+      @media (max-width: 768px) {
+        width: 150px;
+      }
+
+      @media (max-width: 480px) {
+        width: 120px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
     }
   }
 }
 
-// Infinite loop animation
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
-

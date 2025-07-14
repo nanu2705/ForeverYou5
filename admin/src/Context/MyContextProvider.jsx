@@ -5,9 +5,9 @@ import axios from 'axios';
 const MyContextProvider = ({children}) => {
 
 
-
-     const apiUrl = 'http://localhost:3034' || 'https://foreveryou5-4.onrender.com';
-
+const apiUrl = window.location.hostname === 'localhost'
+  ? 'http://localhost:3034'
+  : 'https://foreveryou5-4.onrender.com';
   // const apiUrl = 'https://foreveryou5-4.onrender.com'
 
 

@@ -9,6 +9,7 @@ import "./Home.scss";
 import PromoCarousel from "./PromoCarousel";
 import { useContext } from 'react';
 import MyContext from '../Context/MyContext';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const [topCategories, setTopCategories] = useState([]);
@@ -22,6 +23,10 @@ const Home = () => {
 
   return (
     <div className="home">
+       <Helmet>
+                    <title>ForeverYou</title>
+                    <meta name="description" content="ForeverYou page" />
+                  </Helmet>
       <Slider />
       
       <h3>Top Categories</h3>

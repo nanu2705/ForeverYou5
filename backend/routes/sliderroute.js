@@ -25,10 +25,17 @@ app.get('/api/slider', async (req, res) => {
 app.post('/api/slider', upload.single('imageUrl'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'Image is required' });
 
-  const newImage = new SliderImage({ imageUrl: `/uploads/${req.file.filename}`});
+  const { productRoute } = req.body; // 👈 get route from form
+
+  const newImage = new SliderImage({
+    imageUrl: `/uploads/${req.file.filename}`,
+    productRoute: productRoute || '/' // fallback to home
+  });
+
   await newImage.save();
   res.json({ success: true, message: 'Image uploaded', data: newImage });
 });
+
 
 app.delete('/api/slider/:id', async (req, res) => {
   const image = await SliderImage.findById(req.params.id);

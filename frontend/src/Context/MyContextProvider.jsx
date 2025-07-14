@@ -6,7 +6,9 @@ import axios from 'axios';
 
 const MyContextProvider = ({children}) => {
 
-  const apiUrl = 'http://localhost:3034'|| 'https://foreveryou5-4.onrender.com';
+const apiUrl = window.location.hostname === 'localhost'
+  ? 'http://localhost:3034'
+  : 'https://foreveryou5-4.onrender.com';
   // const apiUrl = 'https://foreveryou5-4.onrender.com'
        //for api calling start
 
@@ -434,11 +436,14 @@ const [wish, setWish] = useState(() => {
   const savedwish = sessionStorage.getItem('wish');
   return savedwish ? JSON.parse(savedwish) : [];
 });
+
+
+
 // for wish list  end
 
 
 // FOR ADD TO Wish PROCESS START
-const handlewish = async (categoryid, productid, productimg, productname, productprice) => {
+const handlewish = async (categoryid, productid, productimg, productname, productprice,productbrand) => {
   if (!token) {
     setMessage('Please login first');
     setOpenalert(true);
@@ -452,7 +457,7 @@ const handlewish = async (categoryid, productid, productimg, productname, produc
   
   try {
     const { data } = await axios.post(`${apiUrl}/add-to-wish`, 
-      { categoryid, productid, productimg, productname, productprice },
+      { categoryid, productid, productimg, productname, productprice, productbrand },
       {
         headers: {
           'Content-Type': 'application/json',
@@ -478,11 +483,13 @@ const handlewish = async (categoryid, productid, productimg, productname, produc
 };
 
 
+
+
  // FOR ADD TO Wish PROCESS end
 
 
 
-  // remove product from cart start
+  // remove product from wishlist start
 
   const removeProductFromWish = async (categoryid, productid) => {
     try {
@@ -515,7 +522,7 @@ const handlewish = async (categoryid, productid, productimg, productname, produc
     }
   };
   
-// remove product from cart end
+// remove product from wishlist end
 
 
  // show go to wish start

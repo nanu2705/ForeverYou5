@@ -10,6 +10,7 @@ import AdminNewsletter from "../AdminNewsletter/AdminNewsletter";
 import AdminTopCategory from "../AdminTopCategory/AdminTopCategory";
 import MyContext from "../Context/MyContext";
 import AdminSlider from "../AdminSlider/AdminSlider";
+import AdminThankYou from "../AdminThankYou/AdminThankYou";
 
 
 
@@ -59,7 +60,9 @@ const Home = () => {
            <li className={activeTab === "news" ? "active" : ""} onClick={() => setActiveTab("news")}>
             Newsletter Subscribers
           </li>
-         
+           <li className={activeTab === "thanks" ? "active" : ""} onClick={() => setActiveTab("thanks")}>
+            Thanks Giving
+          </li>
 
          
         </ul>
@@ -78,6 +81,8 @@ const Home = () => {
         {activeTab === "contact" && <AdminContactList />}
         {activeTab === "news" && <AdminNewsletter/>}
         {activeTab === "slider" && <AdminSlider/>}
+        {activeTab === "thanks" && <AdminThankYou/>}
+
 
       </main>
     </div>

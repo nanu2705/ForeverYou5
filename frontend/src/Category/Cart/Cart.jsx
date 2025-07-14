@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MyContext from '../../Context/MyContext';
 import './Cart.scss';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const Cart = () => {
   const {
@@ -54,6 +55,11 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
+
+       <Helmet>
+          <title>Cart</title>
+          <meta name="description" content="Cart page" />
+        </Helmet>
       {cart && <h1>Cart Details</h1>}
 
       {cart && cart.length > 0 ? (

@@ -88,7 +88,7 @@ const [menuOpen, setMenuOpen] = useState(false);
               setInput('');
               setOpensearch(false);
             }}>
-               {product.productname}
+               {product.productbrand}
             </li>
           );
         }

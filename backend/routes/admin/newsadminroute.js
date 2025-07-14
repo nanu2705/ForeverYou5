@@ -28,4 +28,5 @@ app.delete('/api/admin/newsletter/:id', async (req, res) => {
   }
 });
 
+
 export default app;

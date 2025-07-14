@@ -1,10 +1,15 @@
 // TermsAndConditions.jsx
 import React from 'react';
 import './TermsAndConditions.scss';
+import { Helmet } from 'react-helmet-async';
 
 const TermsAndConditions = () => {
   return (
     <div className="terms-and-conditions">
+      <Helmet>
+        <title>Terms & Conditions</title>
+        <meta name="description" content="Terms & Conditions page" />
+      </Helmet>
       <h1>Terms &amp; Conditions</h1>
       <p><strong>Foreveryou | Vadodara, Gujarat</strong></p>
 

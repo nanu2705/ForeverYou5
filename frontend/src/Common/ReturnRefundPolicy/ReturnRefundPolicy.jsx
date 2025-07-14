@@ -1,10 +1,15 @@
 // ReturnRefundPolicy.jsx
 import React from 'react';
 import './ReturnRefundPolicy.scss';
+import { Helmet } from 'react-helmet-async';
 
 const ReturnRefundPolicy = () => {
   return (
     <div className="return-policy">
+      <Helmet>
+        <title>Return & Refund Policy</title>
+        <meta name="description" content="Return Policy page" />
+      </Helmet>      
       <h1>Return & Refund Policy</h1>
       <p><strong>Foreveryou | Vadodara, Gujarat, India</strong></p>
 
@@ -21,7 +26,7 @@ const ReturnRefundPolicy = () => {
       <h2>2. Return Process</h2>
       <p>To initiate a return:</p>
       <ol>
-        <li>Email us at <strong>support@foreveryou.in</strong> with your order ID and reason for return.</li>
+        <li>Email us at <strong>foreveryou5contact@gmail.com</strong> with your order ID and reason for return.</li>
         <li>Attach a proper unboxing video as proof (mandatory).</li>
         <li>We will verify the request and send return instructions.</li>
       </ol>
@@ -43,17 +48,12 @@ const ReturnRefundPolicy = () => {
         If you paid via UPI or other wallet services, please ensure your payment information is accurate for a smooth refund.
       </p>
 
-      <h2>5. Exchange Policy</h2>
-      <p>
-        If you wish to exchange an item for a different size or color, the return steps apply. Once the original item is received and inspected, we will dispatch the exchange item.
-      </p>
-
-      <h2>6. Damaged or Incorrect Items</h2>
+      <h2>5. Damaged or Incorrect Items</h2>
       <p>
         If you receive a damaged or incorrect item, please contact us within 48 hours of delivery with unboxing video proof. We will arrange a replacement or refund at no extra cost to you.
       </p>
 
-      <h2>8. Contact Us</h2>
+      <h2>6. Contact Us</h2>
       <p>
         For any questions about returns, exchanges, or refunds, reach out to us at:<br />
         📧 Email:<a href='mailto:foreveryou5contact@gmail.com'> foreveryou5contact@gmail.com</a> <br />

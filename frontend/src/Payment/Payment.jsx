@@ -3,6 +3,7 @@ import MyContext from '../Context/MyContext';
 import './Payment.scss';
 import LoginError from '../Profile/LoginError/LoginError';
 import axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 const Payment = () => {
   const {
@@ -12,6 +13,8 @@ const Payment = () => {
     apiUrl,
     cart,
     setCart,
+    Navigate,
+     setLoadingin,
   } = useContext(MyContext);
 
   const handleMockPayment = async () => {
@@ -32,6 +35,7 @@ const Payment = () => {
     };
 
     try {
+       setLoadingin(true)
       const { data } = await axios.post(`${apiUrl}/order`, orderDetails, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -42,17 +46,24 @@ const Payment = () => {
   setCart([]);
   sessionStorage.removeItem("cart");
   alert("Order placed! Details have been emailed to your registered email address.");
+  Navigate('/')
 } else {
         alert(data.error || "Something went wrong");
       }
     } catch (error) {
       console.error("Payment failed:", error.response?.data || error.message);
       alert("Payment failed. Please try again.");
+    } finally {
+        setLoadingin(false);
     }
   };
 
   return (
     <>
+     <Helmet>
+       <title>Payment Gateway</title>
+      <meta name="description" content="Payment Gateway page" />
+    </Helmet>
       {token ? (
         <div className="pay_one">
           <h1>Payment</h1>

@@ -20,7 +20,6 @@ import mongoose from "mongoose";
     },
     cart: [
       {
-  
         categoryid: {
           type: Number,
           required:true,
@@ -28,46 +27,34 @@ import mongoose from "mongoose";
         productid:
         {
           type: Number,
-          required:true,
-         
+          required:true, 
         },
         productimg:
         {
-          type: String,
-          
-          
-         
+          type: String, 
         },
         productname:
         {
-          type: String,
-         
-         
+          type: String, 
         },
         productprice:
         {
-          type:String,
-       
-         
+          type:String, 
         },
         size:
         {
-          type: String,
-          
+          type: String,         
         },
         quantity:
         {
           type: Number,
           default: 1
         }
-  
-  
       },
     ],
 
     wish: [
       {
-  
         categoryid: {
           type: Number,
           required:true,
@@ -75,31 +62,24 @@ import mongoose from "mongoose";
         productid:
         {
           type: Number,
-          required:true,
-         
+          required:true, 
         },
         productimg:
         {
-          type: String,
-          
-          
-         
+          type: String, 
         },
         productname:
         {
-          type: String,
-         
-         
+          type: String, 
+        },
+        productbrand:
+        {
+          type:String,
         },
         productprice:
         {
-          type:String,
-       
-         
-        },
-     
-  
-  
+          type:String, 
+        }
       },
     ],
 

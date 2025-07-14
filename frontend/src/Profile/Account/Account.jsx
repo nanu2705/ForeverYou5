@@ -5,6 +5,7 @@ import './Account.scss';
 import axios from 'axios';
 import MyContext from '../../Context/MyContext';
 import LoginError from '../LoginError/LoginError';
+import { Helmet } from 'react-helmet-async';
 
 const Account = () => {
   const { apiUrl,edit, setEdit,token, userdata, setUserdata, loadingin, setLoadingin, setOpenalert, setMessage } = useContext(MyContext);
@@ -46,6 +47,11 @@ const Account = () => {
 
   return (
     <>
+
+          <Helmet>
+            <title>Account Details</title>
+            <meta name="description" content="Account Details page" />
+          </Helmet>
       {token ? (
         edit ? (
           <Formik

@@ -1,9 +1,14 @@
 import React from 'react';
 import './PrivacyPolicy.scss';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   return (
     <div className="privacy-policy">
+       <Helmet>
+          <title>Privacy Policy</title>
+          <meta name="description" content="Privacy Policy page" />
+        </Helmet>
       <h1>Privacy Policy</h1>
       <p><strong>ForeverYou | Vadodara, Gujarat</strong></p>
 

@@ -6,7 +6,7 @@ import { Favorite, Star } from '@mui/icons-material';
 
 const Tshirt = ({ single }) => {
   const { product } = useParams();
-  const { api, isProductInWish, handlewish, removeProductFromWish, isProductInCart, loadingin, issize, showSize, size, handleCart, setSize } = useContext(MyContext);
+  const { api, isProductInWish, handlewish, removeProductFromWish, isProductInCart, loadingin, issize, showSize, size, handleCart, setSize ,Navigate} = useContext(MyContext);
 
   const newdata = product ? api.filter(item => item.route_category === product) : api;
 
@@ -25,11 +25,11 @@ const Tshirt = ({ single }) => {
               <div className='card' key={i.id} onMouseLeave={() => setSize('')}>
                 <div className="productdetails">
                   <div className="productimage" >
-                    <img src={i.productimg} alt={i.productname} onClick={() => window.open(`/category/${o.route_category}/${i.route_productname}`)}/>
+                    <img src={i.productimg} alt={i.productname} onClick={() => Navigate(`/category/${o.route_category}/${i.route_productname}`)}/>
                     {!isProductInWish(o.id, i.id) ? (
-                      <span onClick={() => handlewish(o.id, i.id, i.productimg, i.productname, i.productprice)}>
-                        <Favorite />
-                      </span>
+                      <span onClick={() => handlewish(o.id, i.id, i.productimg, i.productname, i.productprice, i.productbrand)}>
+  <Favorite />
+</span>
                     ) : (
                       <span onClick={() => removeProductFromWish(o.id, i.id)}>
                         <Favorite style={{ color: 'pink' }} />

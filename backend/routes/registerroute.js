@@ -48,15 +48,40 @@ app.post('/register', async (req, res) => {
     const mailOptions2 = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "Welcome ZEPHYR",
+      subject: "🌟 Welcome to Foreveryou – As Different As You!",
       html: `
-        <p>Hello  ${name}</p>
-        <p>Thank you for Registering !!</p> <br>
-      <p>Your Account has been created successfully<p> <br>
-        <p>Best regards,</p>
-        <p>ZEPHYR Team</p>
-  
-         <img src="https://img.freepik.com/premium-vector/online-clothing-store-app-web-shopping-customer-choosing-dress_81894-7153.jpg?w=740 " alt="">
+        <div style="font-family: 'Segoe UI', sans-serif; padding: 20px; background-color: #fefefe; border: 1px solid #eaeaea; border-radius: 10px;">
+      <h2 style="color: #d63384;">Hi ${name || 'there'}, welcome to Foreveryou!</h2>
+
+      <p>Thank you for registering with <strong>Foreveryou</strong> — your new go-to destination for inclusive, affordable, and expressive fashion.</p>
+
+      <p>We’re thrilled to have you as part of our growing community. Here’s what you can start doing right away:</p>
+
+      <ul style="line-height: 1.8;">
+        <li>✨ Explore handpicked clothing and jewelry collections</li>
+        <li>💖 Save items to your wishlist</li>
+        <li>🛒 Enjoy a smooth shopping and checkout experience</li>
+      </ul>
+
+      <a href="https://foreveryou.in" 
+         style="display: inline-block; margin-top: 20px; background-color: #d63384; color: white; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 6px;">
+        Start Shopping
+      </a>
+
+      <p style="margin-top: 30px;">
+        If you ever need help, questions, or styling tips, feel free to <a href="https://foreveryou.in/contact" style="color: #d63384;">reach out</a>.
+      </p>
+
+      <p>Warm regards,<br/>🛍️ Team Foreveryou</p>
+
+      
+      <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;" />
+
+      <p style="font-size: 12px; color: #888;">
+        You're receiving this email because you created an account at <strong>Foreveryou</strong>.
+        If this wasn't you, please <a href="https://foreveryou.in/contact" style="color: #d63384;">contact support</a>.
+      </p>
+    </div>
       `,
     };
   

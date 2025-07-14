@@ -7,7 +7,7 @@ const app = express();
 
 // ✅ Add to Wishlist
 app.post('/add-to-wish', async (req, res) => {
-  const { categoryid, productid, productimg, productname, productprice } = req.body;
+  const { categoryid, productid, productimg, productname, productprice, productbrand } = req.body;
   try {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) return res.status(401).json({ success: false, error: 'Token not provided' });
@@ -23,9 +23,9 @@ app.post('/add-to-wish', async (req, res) => {
       );
       if (existingProduct) return res.json({ success: false, error: 'Product already in wishlist' });
 
-      user.wish.push({ categoryid, productid, productimg, productname, productprice });
+      user.wish.push({ categoryid, productid, productimg, productname, productprice, productbrand});
       await user.save();
-      res.json({ success: true, message: 'Product added to wishlist', wishInfo: user.wish });
+      res.json({ success: true, message: 'Thanks Product added to wishlist', wishInfo: user.wish });
     });
   } catch (error) {
     console.error('Error adding to wishlist:', error);

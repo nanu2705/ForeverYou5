@@ -31,16 +31,9 @@ import ShippingPolicy from '../Common/ShippingPolicy/ShippingPolicy'
 
 
 
-
-
-
 const App = () => {
 
-
-
-
   return (
-
 
     <BrowserRouter basename="/">
 
@@ -48,8 +41,6 @@ const App = () => {
 
         <GoToTop />
         <Header />
-
-
         <Loading />
         <Alert />
         <Routes>
@@ -74,7 +65,6 @@ const App = () => {
           <Route path='/return-refund-policy' element={<ReturnRefundPolicy/>}/>
           <Route path='/shipping-policy' element={<ShippingPolicy/>}/>
           <Route path='/customer-support' element={<CustomerSupport/>}/>
-
 
 
         </Routes>

@@ -1,10 +1,15 @@
 // ShippingPolicy.jsx
 import React from 'react';
 import './ShippingPolicy.scss';
+import { Helmet } from 'react-helmet-async';
 
 const ShippingPolicy = () => {
   return (
     <div className="shipping-policy">
+      <Helmet>
+        <title>Shipping Policy</title>
+        <meta name="description" content="Shipping Policy page" />
+      </Helmet>      
       <h1>Shipping Policy</h1>
       <p><strong>Foreveryou | Vadodara, Gujarat, India</strong></p>
 

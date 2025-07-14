@@ -7,6 +7,7 @@ import { BiCopy } from 'react-icons/bi';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {  Pinterest, WhatsApp } from '@mui/icons-material';
 import Tshirt from './Tshirt';
+import { Helmet } from 'react-helmet-async';
 
 
 const SingleProduct = () => {
@@ -18,7 +19,10 @@ const SingleProduct = () => {
     const {isProductInCart,isProductInWish,handlewish,handletime,api,handleimg,issize,handleCart,showSize,size,setShow,handleMouseMove,show,cursorPosition,big,shareToWhatsApp,shareToPinterest} = useContext(MyContext)
   return (
   <>
-
+      <Helmet>
+        <title>Forever You</title>
+        <meta name="description" content="Forever You page" />
+      </Helmet>
   {
     api
     .filter(o=> o.route_category===product)

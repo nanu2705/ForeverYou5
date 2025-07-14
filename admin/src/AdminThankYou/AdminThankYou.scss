@@ -1,0 +1,30 @@
+.admin-thankyou {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 10px 20px;
+    background: #d72638;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}

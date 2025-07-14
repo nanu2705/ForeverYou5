@@ -1,9 +1,14 @@
 import React from "react";
 import "./AboutPage.scss";
+import { Helmet } from "react-helmet-async";
 
 const AboutPage = () => {
   return (
     <section className="about-us">
+       <Helmet>
+          <title>About Us</title>
+          <meta name="description" content="About Us page" />
+       </Helmet>
       <div className="container">
         <h1 className="heading">About Us!</h1>
         <span>Welcome to Forever You!</span>

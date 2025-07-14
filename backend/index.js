@@ -34,6 +34,7 @@ import cartroute from "./routes/cartroute.js";
 import wishlistroute from "./routes/wishlistroute.js";
 import shippingroute from "./routes/shippingroute.js";
 import sliderroute from "./routes/sliderroute.js";
+import thanksadminroute from "./routes/admin/thanksadminroute.js";
 
 
 
@@ -61,11 +62,11 @@ dotenv.config();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware
-app.use(cors({
-  origin: 'https://your-frontend-domain.com', // your Hostinger domain
-  credentials: true, // if you use cookies or auth headers
-}));
-
+// app.use(cors({
+//   origin: 'https://your-frontend-domain.com', // your Hostinger domain
+//   credentials: true, // if you use cookies or auth headers
+// }));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -98,6 +99,7 @@ app.use('/', cartroute);
 app.use('/', wishlistroute);
 app.use('/', shippingroute);
 app.use('/', sliderroute);
+app.use('/',thanksadminroute);
 
 
 
