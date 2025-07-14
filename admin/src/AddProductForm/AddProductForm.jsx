@@ -1,16 +1,24 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import "./AddProductForm.scss";
 import { useFormik } from "formik";
 import MyContext from "../Context/MyContext";
 
 const AddProductForm = () => {
- 
-  
-  const {apiUrl,products, setProducts,
-          descriptionText, setDescriptionText,sideImageFiles, setSideImageFiles} =useContext(MyContext)
+  const {
+    apiUrl,
+    products,
+    setProducts,
+    descriptionText,
+    setDescriptionText,
+    sideImageFiles,
+    setSideImageFiles,
+  } = useContext(MyContext);
 
-  // Fetch all products
+  const [isEditing, setIsEditing] = useState(false);
+  const [editCategory, setEditCategory] = useState('');
+  const [editProductId, setEditProductId] = useState('');
+
   const fetchData = async () => {
     try {
       const res = await axios.get(`${apiUrl}/api/data`);
@@ -32,7 +40,6 @@ const AddProductForm = () => {
     fetchData();
   }, []);
 
-  // Delete single product
   const handleDelete = async (category, id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
@@ -45,13 +52,48 @@ const AddProductForm = () => {
     }
   };
 
+  const handleEdit = (product) => {
+    formik.setValues({
+      name: product.productname || '',
+      price: product.productprice || '',
+      oldprice: product.productoldprice || '',
+      category: product.category || '',
+      title: product.title || '',
+      productbrand: product.productbrand || '',
+      review: product.review || 0,
+      tomorrow: product.tomorrow || false,
+      sizes: product.sizes_product
+        ? Object.fromEntries(
+            Object.keys(formik.values.sizes).map((size) => [
+              size,
+              product.sizes_product.some((s) => s.size === size),
+            ])
+          )
+        : {},
+      description: [],
+      images: [],
+      category_img: null,
+    });
+
+    setDescriptionText(
+      Array.isArray(product.description)
+        ? product.description.map((d) => d.text).join('\n')
+        : ''
+    );
+
+    setSideImageFiles([null, null, null, null]);
+    setIsEditing(true);
+    setEditCategory(product.category);
+    setEditProductId(product.id);
+  };
+
   const formik = useFormik({
     initialValues: {
       name: "",
       price: "",
       oldprice: "",
       category: "",
-      title: "", // New field for title
+      title: "",
       productbrand: "",
       sizes: {
         S: false,
@@ -60,10 +102,10 @@ const AddProductForm = () => {
         XL: false,
         XXL: false,
         Unstitched: false,
-        2.2:false,
-        2.4:false,
-        2.6:false,
-        2.8:false,
+        2.2: false,
+        2.4: false,
+        2.6: false,
+        2.8: false,
       },
       description: [],
       images: [],
@@ -74,35 +116,30 @@ const AddProductForm = () => {
 
     onSubmit: async (values, { resetForm }) => {
       const formData = new FormData();
-
       formData.append("name", values.name);
       formData.append("price", values.price);
       formData.append("oldprice", values.oldprice);
       formData.append("category", values.category);
-      formData.append("title", values.title); // Append title
+      formData.append("title", values.title);
       formData.append("productbrand", values.productbrand);
       formData.append("review", values.review);
       formData.append("tomorrow", values.tomorrow);
 
-      // Format description
       const formattedDescription = descriptionText
         .split("\n")
         .filter((line) => line.trim() !== "")
         .map((line) => ({ text: line.trim() }));
       formData.append("description", JSON.stringify(formattedDescription));
 
-      // Sizes
       const selectedSizes = Object.keys(values.sizes)
         .filter((size) => values.sizes[size])
         .map((size) => ({ size }));
       formData.append("sizes_product", JSON.stringify(selectedSizes));
 
-      // Main product images
       for (let file of values.images) {
         formData.append("images", file);
       }
 
-      // Side images from 3 inputs
       sideImageFiles.forEach((file) => {
         if (file) formData.append("side_images", file);
       });
@@ -112,11 +149,20 @@ const AddProductForm = () => {
       }
 
       try {
-        await axios.post(`${apiUrl}/api/data`, formData);
-        alert("✅ Product Added Successfully!");
+        if (isEditing) {
+          await axios.put(`${apiUrl}/api/data/${editCategory}/${editProductId}`, formData);
+          alert("✅ Product Updated Successfully!");
+        } else {
+          await axios.post(`${apiUrl}/api/data`, formData);
+          alert("✅ Product Added Successfully!");
+        }
+
         resetForm();
         setDescriptionText("");
-        setSideImageFiles([null, null, null]);
+        setSideImageFiles([null, null, null, null]);
+        setIsEditing(false);
+        setEditCategory('');
+        setEditProductId('');
         fetchData();
       } catch (error) {
         console.error("❌ Error submitting product:", error);
@@ -151,14 +197,14 @@ const AddProductForm = () => {
   return (
     <div className="add-product-container">
       <form className="admin-form" onSubmit={formik.handleSubmit}>
-        <h2>Add New Product</h2>
+        <h2>{isEditing ? 'Edit Product' : 'Add New Product'}</h2>
 
         <input name="name" type="text" placeholder="Product Name" value={formik.values.name} onChange={formik.handleChange} />
         <input name="productbrand" type="text" placeholder="Brand" value={formik.values.productbrand} onChange={formik.handleChange} />
         <input name="price" type="number" placeholder="Price" value={formik.values.price} onChange={formik.handleChange} />
-        <input name="oldprice" type="number" placeholder="Old Price (optional)" value={formik.values.oldprice} onChange={formik.handleChange} />
-        <input name="category" type="text" placeholder="Category (e.g. Sports Wear)" value={formik.values.category} onChange={formik.handleChange} />
-        <input name="title" type="text" placeholder="Title (e.g. women, men)" value={formik.values.title} onChange={formik.handleChange} />
+        <input name="oldprice" type="number" placeholder="Old Price" value={formik.values.oldprice} onChange={formik.handleChange} />
+        <input name="category" type="text" placeholder="Category" value={formik.values.category} onChange={formik.handleChange} />
+        <input name="title" type="text" placeholder="Top Category (e.g. women, men)" value={formik.values.title} onChange={formik.handleChange} />
 
         <label>Category Image:</label>
         <input type="file" name="category_img" accept="image/*" onChange={handleCategoryImgChange} />
@@ -174,14 +220,9 @@ const AddProductForm = () => {
         </div>
 
         <label>Product Description (one point per line):</label>
-        <textarea
-          name="description"
-          placeholder="Enter product description, each point on a new line"
-          value={descriptionText}
-          onChange={(e) => setDescriptionText(e.target.value)}
-        ></textarea>
+        <textarea name="description" value={descriptionText} onChange={(e) => setDescriptionText(e.target.value)}></textarea>
 
-        <label>Review (out of 5):</label>
+        <label>Review:</label>
         <input type="number" name="review" min="0" max="5" step="0.1" value={formik.values.review} onChange={formik.handleChange} />
 
         <label>
@@ -189,19 +230,28 @@ const AddProductForm = () => {
           Available for Tomorrow Delivery
         </label>
 
-        <label>Main Product Images:</label>
+        <label>Main Images:</label>
         <input type="file" name="images" multiple onChange={handleFileChange} />
 
-        <label>Side Image 1:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(0, e)} />
-        <label>Side Image 2:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(1, e)} />
-        <label>Side Image 3:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(2, e)} />
-        <label>Side Image 4:</label>
-        <input type="file" onChange={(e) => handleSideImageChange(3, e)} />
+        <label>Side Images:</label>
+        {[0, 1, 2, 3].map((index) => (
+          <input key={index} type="file" onChange={(e) => handleSideImageChange(index, e)} />
+        ))}
 
-        <button type="submit">Submit</button>
+        <button type="submit">{isEditing ? 'Update Product' : 'Submit'}</button>
+        {isEditing && (
+          <button
+            type="button"
+            onClick={() => {
+              setIsEditing(false);
+              formik.resetForm();
+              setDescriptionText('');
+              setSideImageFiles([null, null, null, null]);
+            }}
+          >
+            Cancel Edit
+          </button>
+        )}
       </form>
 
       <div className="product-list">
@@ -221,11 +271,11 @@ const AddProductForm = () => {
                   {Array.isArray(prod.description) &&
                     prod.description.map((d, idx) => <li key={idx}>{d.text}</li>)}
                 </ul>
+                <button onClick={() => handleEdit(prod)}>Edit</button>
                 <button onClick={() => handleDelete(prod.category, prod.id)}>Delete</button>
               </div>
             ))}
       </div>
-
     </div>
   );
 };

@@ -36,7 +36,6 @@ app.post('/api/slider', upload.single('imageUrl'), async (req, res) => {
   res.json({ success: true, message: 'Image uploaded', data: newImage });
 });
 
-
 app.delete('/api/slider/:id', async (req, res) => {
   const image = await SliderImage.findById(req.params.id);
   if (!image) return res.status(404).json({ error: 'Image not found' });
@@ -47,6 +46,27 @@ app.delete('/api/slider/:id', async (req, res) => {
 
   await SliderImage.findByIdAndDelete(req.params.id);
   res.json({ success: true, message: 'Image deleted' });
+});
+
+// ✅ EDIT/UPDATE image and/or route
+app.put('/api/slider/:id', upload.single('imageUrl'), async (req, res) => {
+  const image = await SliderImage.findById(req.params.id);
+  if (!image) return res.status(404).json({ error: 'Image not found' });
+
+  const { productRoute } = req.body;
+
+  // If new image uploaded, delete old one and update
+  if (req.file) {
+    fs.unlink(`.${image.imageUrl}`, (err) => {
+      if (err) console.error('File delete error:', err);
+    });
+    image.imageUrl = `/uploads/${req.file.filename}`;
+  }
+
+  if (productRoute) image.productRoute = productRoute;
+
+  await image.save();
+  res.json({ success: true, message: 'Image updated', data: image });
 });
 
 export default app;

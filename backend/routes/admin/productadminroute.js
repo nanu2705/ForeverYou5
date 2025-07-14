@@ -21,64 +21,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-
-// // ✅ EDIT product in category
-// app.put('/api/data/:category/:productId', upload.fields([
-//   { name: 'images', maxCount: 1 },
-//   { name: 'side_images', maxCount: 5 },
-// ]), (req, res) => {
-//   const rawData = fs.readFileSync(filePath, 'utf-8');
-//   const categories = JSON.parse(rawData);
-
-//   const { category, productId } = req.params;
-//   const {
-//     name,
-//     price,
-//     oldprice,
-//     title,
-//     productbrand,
-//     description,
-//     review,
-//     tomorrow
-//   } = req.body;
-
-//   const sizes = JSON.parse(req.body.sizes_product || '[]');
-//   const mainImage = req.files['images']?.[0];
-//   const sideImages = req.files['side_images'] || [];
-
-//   const categoryIndex = categories.findIndex(cat => cat.category === category);
-//   if (categoryIndex === -1) return res.status(404).json({ error: 'Category not found' });
-
-//   const productIndex = categories[categoryIndex].products.findIndex(p => p.id == productId);
-//   if (productIndex === -1) return res.status(404).json({ error: 'Product not found' });
-
-//   const product = categories[categoryIndex].products[productIndex];
-
-//   product.productname = name || product.productname;
-//   product.route_productname = name ? name.replace(/\s+/g, '-') : product.route_productname;
-//   product.productprice = Number(price || product.productprice);
-//   product.productoldprice = Number(oldprice || product.productoldprice);
-//   product.productbrand = productbrand || product.productbrand;
-//   product.description = description ? JSON.parse(description) : product.description;
-//   product.review = Number(review || product.review);
-//   product.tomorrow = tomorrow === "true" || tomorrow === true;
-//   product.sizes_product = sizes;
-
-//   if (mainImage) {
-//     product.productimg = "/uploads/" + mainImage.filename;
-//   }
-
-//   if (sideImages.length > 0) {
-//     product.side_image = sideImages.map(file => ({
-//       in_image: "/uploads/" + file.filename
-//     }));
-//   }
-
-//   fs.writeFileSync(filePath, JSON.stringify(categories, null, 2), 'utf-8');
-//   res.status(200).json({ success: true, message: "Product updated" });
-// });
-
-
 // ✅ DELETE product from category
 app.delete('/api/data/:category/:productId', (req, res) => {
   const rawData = fs.readFileSync(filePath, 'utf-8');
@@ -96,6 +38,46 @@ app.delete('/api/data/:category/:productId', (req, res) => {
 
   fs.writeFileSync(filePath, JSON.stringify(categories, null, 2), 'utf-8');
   res.json({ success: true, message: 'Product deleted' });
+});
+
+// ✅ EDIT product in category
+app.put('/api/data/:category/:productId', upload.single('productimg'), (req, res) => {
+  const rawData = fs.readFileSync(filePath, 'utf-8');
+  const categories = JSON.parse(rawData);
+
+  const { category, productId } = req.params;
+
+  const categoryIndex = categories.findIndex(cat => cat.category === category);
+  if (categoryIndex === -1) return res.status(404).json({ error: 'Category not found' });
+
+  const productIndex = categories[categoryIndex].products.findIndex(p => p.id == productId);
+  if (productIndex === -1) return res.status(404).json({ error: 'Product not found' });
+
+  const existingProduct = categories[categoryIndex].products[productIndex];
+
+  // ✅ Update fields
+  const updatedFields = req.body;
+  const updatedProduct = {
+    ...existingProduct,
+    ...updatedFields
+  };
+
+  // ✅ If new image uploaded, update and optionally delete old image
+  if (req.file) {
+    const oldImg = existingProduct.productimg;
+    updatedProduct.productimg = `/uploads/${req.file.filename}`;
+    if (oldImg && fs.existsSync(path.join(__dirname, '../../', oldImg))) {
+      fs.unlink(path.join(__dirname, '../../', oldImg), (err) => {
+        if (err) console.error('Failed to delete old image:', err);
+      });
+    }
+  }
+
+  // ✅ Save updated product
+  categories[categoryIndex].products[productIndex] = updatedProduct;
+
+  fs.writeFileSync(filePath, JSON.stringify(categories, null, 2), 'utf-8');
+  res.json({ success: true, message: 'Product updated', data: updatedProduct });
 });
 
 
