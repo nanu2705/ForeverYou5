@@ -102,7 +102,7 @@ const Footer = () => {
       <div className="main-lower">
         <h4>Follow Us On</h4>
         <div className="social-icons">
-          <a href="https://www.facebook.com/your_page" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/people/Forver-You/pfbid02rXctTpM1dM35YcaHE1Kzb7ok8NbMq97JuBQvur72DaranAwCJFyoAeFH2RVojFVdl/?rdid=Gxx5REvxzi3J4lIU&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F16uenzCd1H%252F" target="_blank" rel="noopener noreferrer">
             <FacebookIcon />
           </a>
           <a href="https://www.instagram.com/foreveryou.55" target="_blank" rel="noopener noreferrer">
